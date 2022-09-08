@@ -2,9 +2,9 @@
 {
     public class Location
     {
-        public string Building { get; set; }
-        public string Floor { get; set; }
-        public string Room { get; set; }
+        public Building Building { get; set; }
+        public Floor Floor { get; set; }
+        public Room Room { get; set; }
 
     }
 }
