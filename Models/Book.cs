@@ -20,7 +20,5 @@ namespace HomeLibrary.BusinessLogic.Models
         public int? YourRating { get; set; }
 
         public Location Location { get; set; }
-
-
     }
 }
