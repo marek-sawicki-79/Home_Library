@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "HomeLibrary.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HomeLibrary.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HomeLibrary.BusinessLogic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HomeLibrary.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../Home_Library/HomeLibrary.BusinessLogic.csproj",
+      "msbuildProject": "../Home_Library/HomeLibrary.BusinessLogic.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "HomeLibrary.BusinessLogic >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\maras\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Repozytoria\\My projects\\HomeLibrary\\HomeLibrary.GUI\\HomeLibrary.GUI.csproj",
+      "projectName": "HomeLibrary.GUI",
+      "projectPath": "C:\\Repozytoria\\My projects\\HomeLibrary\\HomeLibrary.GUI\\HomeLibrary.GUI.csproj",
+      "packagesPath": "C:\\Users\\maras\\.nuget\\packages\\",
+      "outputPath": "C:\\Repozytoria\\My projects\\HomeLibrary\\HomeLibrary.GUI\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\maras\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Repozytoria\\My projects\\HomeLibrary\\Home_Library\\HomeLibrary.BusinessLogic.csproj": {
+              "projectPath": "C:\\Repozytoria\\My projects\\HomeLibrary\\Home_Library\\HomeLibrary.BusinessLogic.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

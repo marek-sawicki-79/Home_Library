@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "HomeLibrary.GUI/1.0.0": {
+        "dependencies": {
+          "HomeLibrary.BusinessLogic": "1.0.0"
+        },
+        "runtime": {
+          "HomeLibrary.GUI.dll": {}
+        }
+      },
+      "HomeLibrary.BusinessLogic/1.0.0": {
+        "runtime": {
+          "HomeLibrary.BusinessLogic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HomeLibrary.GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HomeLibrary.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
