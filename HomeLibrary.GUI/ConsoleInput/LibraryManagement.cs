@@ -39,6 +39,5 @@ namespace HomeLibrary.GUI.CnsoleInput
                                   $"\n\t edition no. {book.Edition}.");
             }
         }
-
     }
 }
