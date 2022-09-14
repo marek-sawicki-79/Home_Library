@@ -26,12 +26,12 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
         }
 
-        public void RemoveBook(string bookToRemove)
+        public static void RemoveBook(string bookToRemove)
         {
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
         }
 
-        public void DisplayAllBooks(List<Book> books)
+        public static void DisplayAllBooks(List<Book> books)
         {
             foreach (var book in books)
             {

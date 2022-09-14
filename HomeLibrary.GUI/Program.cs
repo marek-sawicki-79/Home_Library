@@ -75,12 +75,14 @@ while (true)
             break;
 
         case "2":
-            
+            LibraryManagement.DisplayAllBooks();
             break;
 
         case "3":
             Console.Clear();
             Console.WriteLine("Enter the title of the the book to remove from the list");
+            var bookToRemove = Console.ReadLine();
+            LibraryManagement.RemoveBook(bookToRemove);
             break;
 
         case "x":
