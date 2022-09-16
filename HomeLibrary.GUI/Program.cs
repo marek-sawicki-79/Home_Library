@@ -15,6 +15,7 @@ while (true)
     var userChoice = Console.ReadLine();
     var location = new Location();
     var newBook = new Book();
+    var library = new LibraryManagement();
 
     switch (userChoice)
     {
@@ -71,18 +72,20 @@ while (true)
             location.Room = Console.ReadLine();
 
             newBook.Location = location;
-            LibraryManagement.AddBook(newBook);
+            library.AddBook(newBook);
+            Console.ReadKey();
             break;
 
         case "2":
-            LibraryManagement.DisplayAllBooks();
+            library.DisplayAllBooks();
+            Console.ReadKey();
             break;
 
         case "3":
             Console.Clear();
             Console.WriteLine("Enter the title of the the book to remove from the list");
             var bookToRemove = Console.ReadLine();
-            LibraryManagement.RemoveBook(bookToRemove);
+            library.RemoveBook(bookToRemove);
             break;
 
         case "x":

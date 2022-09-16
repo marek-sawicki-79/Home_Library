@@ -9,12 +9,12 @@ namespace HomeLibrary.GUI.CnsoleInput
 {
     public class LibraryManagement
     {
-        static List<Book> Books = new List<Book>();
-        public static void AddBook(Book newBook)
+        private List<Book> Books { get; set; }  = new List<Book>();
+        public void AddBook(Book newBook)
         {
            Books.Add(newBook);
 
-            Console.Clear();
+            
             Console.WriteLine($"You have successfully added a new book to your home library!" +
                               $"\nit is a {newBook.Genre} named {newBook.Title}, written by {newBook.Author}" +
                               $"\nand published by {newBook.PublishingHouse}" +
@@ -26,14 +26,14 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
         }
 
-        public static void RemoveBook(string bookToRemove)
+        public void RemoveBook(string bookToRemove)
         {
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
         }
 
-        public static void DisplayAllBooks(List<Book> books)
+       public void DisplayAllBooks()
         {
-            foreach (var book in books)
+            foreach (var book in Books)
             {
                 Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}" +
                                   $"\n\t edition no. {book.Edition}.");
