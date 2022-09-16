@@ -7,9 +7,9 @@ using HomeLibrary.BusinessLogic.Models;
 
 namespace HomeLibrary.GUI.CnsoleInput
 {
-    public class LibraryManagement
+    internal class LibraryManagement
     {
-        private List<Book> Books { get; set; }  = new List<Book>();
+        public List<Book> Books { get; set; }  = new List<Book>();
         public void AddBook(Book newBook)
         {
            Books.Add(newBook);
@@ -22,7 +22,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"It was published in {newBook.YearOfPublish}. It is a part " +
                               $"of a {newBook.SeriesTitle} series." +
                               $"\n your rate is {newBook.YourRating} out of 5." +
-                              $"\n\nthe book is located in {newBook.Location.Building}" +
+                              $"\n\nthe book is located in {newBook.Location.Building} " +
                               $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
         }
 

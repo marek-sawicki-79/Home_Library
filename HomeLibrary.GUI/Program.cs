@@ -1,26 +1,27 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using HomeLibrary.BusinessLogic.Models;using HomeLibrary.GUI.CnsoleInput;
+using HomeLibrary.BusinessLogic.Models;
+using HomeLibrary.GUI.CnsoleInput;
+using System.Threading;
 
+
+
+Console.Clear();
+Console.WriteLine("Welcome to Home Library application\n" +
+                  "chose your action:" +
+                  "\n1. to add new book to your home collection," +
+                  "\n2. to see all books stored in this app," +
+                  "\n3. to remove book from your collection," +
+                  "\nx to exit application.");
+var userChoice = Console.ReadLine();
+var library = new LibraryManagement();
 
 while (true)
 {
-    Console.Clear();
-    Console.WriteLine("Welcome to Home Library application\n" +
-                      "chose your action:" +
-                      "\n1. to add new book to your home collection," +
-                      "\n2. to see all books stored in this app," +
-                      "\n3. to remove book from your collection," +
-                      "\nx to exit application.");
-    var userChoice = Console.ReadLine();
-    var location = new Location();
-    var newBook = new Book();
-    var library = new LibraryManagement();
-
     switch (userChoice)
     {
         case "1":
-           
+            var newBook = new Book();
             Console.Clear();
 
             Console.WriteLine("Enter book title:");
@@ -55,11 +56,13 @@ while (true)
             newBook.YourRating = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
+            var location = new Location();
             Console.Clear();
             Console.WriteLine("Now we are entering the book Location in your home library.");
             Console.WriteLine("Press any key, when you're ready.");
             Console.ReadKey();
 
+            Console.Clear();
             Console.WriteLine("Name the building:");
             location.Building = Console.ReadLine();
             Console.WriteLine("");
@@ -77,6 +80,7 @@ while (true)
             break;
 
         case "2":
+            Console.Clear();
             library.DisplayAllBooks();
             Console.ReadKey();
             break;
@@ -90,15 +94,16 @@ while (true)
 
         case "x":
             Console.WriteLine("Goodbye");
+            Thread.Sleep(3000);
             return;
 
         default:
             Console.WriteLine("Invalid input");
             break;
-
-        
     }
-        
 
-    
+    Console.WriteLine("Choose your action");
+    userChoice = Console.ReadLine();
+
+
 }
