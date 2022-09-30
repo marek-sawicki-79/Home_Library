@@ -18,6 +18,8 @@ namespace HomeLibrary.BusinessLogic.Models
         public string? SeriesTitle { get; set; }
         public int YearOfPublish { get; set; }
         public int? YourRating { get; set; }
+        public bool isBorrowed { get; set; }
+        public string? borrowedInfo { get; set; }
 
         public Location Location { get; set; }
 
