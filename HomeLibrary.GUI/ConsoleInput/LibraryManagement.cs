@@ -14,7 +14,6 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
            Books.Add(newBook);
 
-            
             Console.WriteLine($"You have successfully added a new book to your home library!" +
                               $"\nit is a {newBook.Genre} named {newBook.Title}, written by {newBook.Author}" +
                               $"\nand published by {newBook.PublishingHouse}" +
