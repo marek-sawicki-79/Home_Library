@@ -87,7 +87,7 @@ while (true)
 
         case "3":
             Console.Clear();
-            Console.WriteLine("Enter the title of the the book to remove from the list");
+            Console.WriteLine("Enter the title of the book to remove from the list");
             var bookToRemove = Console.ReadLine();
             library.RemoveBook(bookToRemove);
             break;

@@ -22,7 +22,7 @@ namespace HomeLibrary.BusinessLogic.Models
         //public string? borrowedInfo { get; set; }
 
         public Location Location { get; set; }
-
+        public BookStatus Status { get; set; } = null;
 
     }
 }
