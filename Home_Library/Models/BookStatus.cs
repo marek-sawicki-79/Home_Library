@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeLibrary.BusinessLogic.Models
 {
-    internal class BookStatus
+    public class BookStatus
     {
         public bool isBorrowed { get; set; }
         public bool isItYours { get; set; }

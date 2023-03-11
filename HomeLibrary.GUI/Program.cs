@@ -75,8 +75,27 @@ while (true)
             location.Room = Console.ReadLine();
 
             newBook.Location = location;
-            library.AddBook(newBook);
+
+            var status = new BookStatus();
+            Console.Clear();
+            Console.WriteLine("Now we are entering the status of the book.");
+            Console.WriteLine("Press any key, when you're ready.");
             Console.ReadKey();
+
+            Console.WriteLine("Is this book yours (Y/N) or borrowed?");
+            string answer = Console.ReadLine().ToLower();
+            if(answer == "y")
+            {
+                status.isItYours = true;
+            }
+            else if(answer == "n")
+            {
+                status.isItYours = false;
+            }
+            else
+            {
+                Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+            }
             break;
 
         case "2":
