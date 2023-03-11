@@ -8,7 +8,7 @@ namespace HomeLibrary.BusinessLogic.Models
 {
     public class BookStatus
     {
-        public bool isBorrowed { get; set; }
+        public bool isLended { get; set; }
         public bool isItYours { get; set; }
         public string? lendedToInfo { get; set; }
         public string? borrowedFromInfo { get; set; }

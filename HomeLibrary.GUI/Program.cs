@@ -56,26 +56,6 @@ while (true)
             newBook.YourRating = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            var location = new Location();
-            Console.Clear();
-            Console.WriteLine("Now we are entering the book Location in your home library.");
-            Console.WriteLine("Press any key, when you're ready.");
-            Console.ReadKey();
-
-            Console.Clear();
-            Console.WriteLine("Name the building:");
-            location.Building = Console.ReadLine();
-            Console.WriteLine("");
-
-            Console.WriteLine("Name the floor:");
-            location.Floor = Console.ReadLine();
-            Console.WriteLine("");
-
-            Console.WriteLine("Now name the room:");
-            location.Room = Console.ReadLine();
-
-            newBook.Location = location;
-
             var status = new BookStatus();
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
@@ -87,6 +67,39 @@ while (true)
             if(answer == "y")
             {
                 status.isItYours = true;
+                Console.WriteLine("Have you lend it to someone? (Y/N)");
+                var input = Console.ReadLine().ToLower();
+                if (input == "y")
+                {
+                    Console.WriteLine("Write necessary information about it - e.g. who has it now.");
+                    status.lendedToInfo = Console.ReadLine();
+                }
+                else if (input == "n")
+                {
+                    var location = new Location();
+                    Console.Clear();
+                    Console.WriteLine("Now we are entering the book Location in your home library.");
+                    Console.WriteLine("Press any key, when you're ready.");
+                    Console.ReadKey();
+
+                    Console.Clear();
+                    Console.WriteLine("Name the building:");
+                    location.Building = Console.ReadLine();
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Name the floor:");
+                    location.Floor = Console.ReadLine();
+                    Console.WriteLine("");
+
+                    Console.WriteLine("Now name the room:");
+                    location.Room = Console.ReadLine();
+
+                    newBook.Location = location;
+                }
+                else
+                {
+                    Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+                }
             }
             else if(answer == "n")
             {
@@ -97,6 +110,8 @@ while (true)
                 Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
             }
             break;
+
+
 
         case "2":
             Console.Clear();
