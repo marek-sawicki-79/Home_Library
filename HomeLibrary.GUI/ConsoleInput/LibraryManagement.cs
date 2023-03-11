@@ -25,9 +25,35 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
         }
 
+        public void IllegibleAnswer()
+        {
+            Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+        }
+
         public void RemoveBook(string bookToRemove)
         {
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
+        }
+
+        public void AddLocation(Location newLocation)
+        {
+            //var location = new Location();
+            Console.Clear();
+            Console.WriteLine("Now we are entering the book Location in your home library.");
+            Console.WriteLine("Press any key, when you're ready.");
+            Console.ReadKey();
+
+            Console.Clear();
+            Console.WriteLine("Name the building:");
+            newLocation.Building = Console.ReadLine();
+            Console.WriteLine("");
+
+            Console.WriteLine("Name the floor:");
+            newLocation.Floor = Console.ReadLine();
+            Console.WriteLine("");
+
+            Console.WriteLine("Now name the room:");
+            newLocation.Room = Console.ReadLine();
         }
 
        public void DisplayAllBooks()

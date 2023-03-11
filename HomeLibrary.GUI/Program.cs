@@ -64,7 +64,9 @@ while (true)
 
             Console.WriteLine("Is this book yours (Y/N) or borrowed?");
             string answer = Console.ReadLine().ToLower();
-            if(answer == "y")
+
+            var location = new Location();
+            if (answer == "y")
             {
                 status.isItYours = true;
                 Console.WriteLine("Have you lend it to someone? (Y/N)");
@@ -76,39 +78,27 @@ while (true)
                 }
                 else if (input == "n")
                 {
-                    var location = new Location();
-                    Console.Clear();
-                    Console.WriteLine("Now we are entering the book Location in your home library.");
-                    Console.WriteLine("Press any key, when you're ready.");
-                    Console.ReadKey();
+                    library.AddLocation(location);
 
-                    Console.Clear();
-                    Console.WriteLine("Name the building:");
-                    location.Building = Console.ReadLine();
-                    Console.WriteLine("");
-
-                    Console.WriteLine("Name the floor:");
-                    location.Floor = Console.ReadLine();
-                    Console.WriteLine("");
-
-                    Console.WriteLine("Now name the room:");
-                    location.Room = Console.ReadLine();
-
-                    newBook.Location = location;
                 }
                 else
                 {
-                    Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+                    library.IllegibleAnswer();
                 }
             }
             else if(answer == "n")
             {
                 status.isItYours = false;
-            }
+                Console.WriteLine("Where did you get it from?");
+                status.borrowedFromInfo = Console.ReadLine();
+                library.AddLocation(location);
+                            }
             else
             {
-                Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+                library.IllegibleAnswer();
             }
+            newBook.Location = location;
+            newBook.Status = status;
             break;
 
 
@@ -136,7 +126,11 @@ while (true)
             break;
     }
 
-    Console.WriteLine("Choose your action");
+    Console.WriteLine("Choose your action" +
+                  "\n1.to add new book to your home collection, " +
+                  "\n2. to see all books stored in this app," +
+                  "\n3. to remove book from your collection," +
+                  "\nx to exit application.");
     userChoice = Console.ReadLine();
 
 
