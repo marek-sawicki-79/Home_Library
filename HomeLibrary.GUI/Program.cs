@@ -79,7 +79,7 @@ while (true)
                 else if (input == "n")
                 {
                     library.AddLocation(location);
-
+                    newBook.Location = location;
                 }
                 else
                 {
@@ -92,12 +92,12 @@ while (true)
                 Console.WriteLine("Where did you get it from?");
                 status.borrowedFromInfo = Console.ReadLine();
                 library.AddLocation(location);
-                            }
+                newBook.Location = location;
+            }
             else
             {
                 library.IllegibleAnswer();
             }
-            newBook.Location = location;
             newBook.Status = status;
             break;
 
