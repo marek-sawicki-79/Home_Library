@@ -15,13 +15,16 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\nx to exit application.");
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
+var newBook = new Book();
+var bookStatus = new BookStatus();
+var location = new Location();
 
 while (true)
 {
     switch (userChoice)
     {
         case "1":
-            var newBook = new Book();
+
             Console.Clear();
 
             Console.WriteLine("Enter book title:");
@@ -56,7 +59,7 @@ while (true)
             newBook.YourRating = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            var bookStatus = new BookStatus();
+
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
             Console.WriteLine("Press any key, when you're ready.");
@@ -65,7 +68,7 @@ while (true)
             Console.WriteLine("Is this book yours (Y/N) or borrowed?");
             string answer = Console.ReadLine().ToLower();
 
-            var location = new Location();
+
             if (answer == "y")
             {
                 bookStatus.isItYours = true;
@@ -76,11 +79,14 @@ while (true)
                     bookStatus.isLended = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
                     bookStatus.lendedToInfo = Console.ReadLine();
+                    bookStatus.borrowedFromInfo = "";
                 }
                 else if (input == "n")
                 {
                     bookStatus.isLended = false;
                     library.AddLocation(location);
+                    bookStatus.lendedToInfo = "";
+                    bookStatus.borrowedFromInfo = "";
                 }
                 else
                 {
@@ -95,6 +101,7 @@ while (true)
                 bookStatus.isLended = false;
                 Console.WriteLine("Where did you get it from?");
                 bookStatus.borrowedFromInfo = Console.ReadLine();
+                bookStatus.lendedToInfo = "";
                 library.AddLocation(location);
             }
             else
