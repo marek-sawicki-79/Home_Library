@@ -56,7 +56,7 @@ while (true)
             newBook.YourRating = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            var status = new BookStatus();
+            var bookStatus = new BookStatus();
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
             Console.WriteLine("Press any key, when you're ready.");
@@ -68,16 +68,18 @@ while (true)
             var location = new Location();
             if (answer == "y")
             {
-                status.isItYours = true;
+                bookStatus.isItYours = true;
                 Console.WriteLine("Have you lend it to someone? (Y/N)");
                 var input = Console.ReadLine().ToLower();
                 if (input == "y")
                 {
+                    bookStatus.isLended = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                    status.lendedToInfo = Console.ReadLine();
+                    bookStatus.lendedToInfo = Console.ReadLine();
                 }
                 else if (input == "n")
                 {
+                    bookStatus.isLended = false;
                     library.AddLocation(location);
                     newBook.Location = location;
                 }
@@ -85,12 +87,14 @@ while (true)
                 {
                     library.IllegibleAnswer();
                 }
+
             }
             else if(answer == "n")
             {
-                status.isItYours = false;
+                bookStatus.isItYours = false;
+                bookStatus.isLended = false;
                 Console.WriteLine("Where did you get it from?");
-                status.borrowedFromInfo = Console.ReadLine();
+                bookStatus.borrowedFromInfo = Console.ReadLine();
                 library.AddLocation(location);
                 newBook.Location = location;
             }
@@ -98,7 +102,7 @@ while (true)
             {
                 library.IllegibleAnswer();
             }
-            newBook.Status = status;
+            newBook.BookStatus = bookStatus;
             break;
 
 
