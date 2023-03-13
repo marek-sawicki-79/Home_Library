@@ -9,7 +9,7 @@ namespace HomeLibrary.BusinessLogic.Models
 {
     public class Book
     {
-        public int Id { get; set; }
+        private int Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string PublishingHouse { get; set; }
@@ -18,11 +18,24 @@ namespace HomeLibrary.BusinessLogic.Models
         public string? SeriesTitle { get; set; }
         public int YearOfPublish { get; set; }
         public int? YourRating { get; set; }
-        //public bool isBorrowed { get; set; }
-        //public string? borrowedInfo { get; set; }
+        
 
         public Location Location { get; set; }
         public BookStatus BookStatus { get; set; } = null;
 
+        public Book(int id, string title, string author, string publishingHouse, string? genre, string? edition, string? seriesTitle, int yearOfPublish, int? yourRating, Location location, BookStatus bookStatus)
+        {
+            Id = id;
+            Title = title;
+            Author = author;
+            PublishingHouse = publishingHouse;
+            Genre = genre;
+            Edition = edition;
+            SeriesTitle = seriesTitle;
+            YearOfPublish = yearOfPublish;
+            YourRating = yourRating;
+            Location = location;
+            BookStatus = bookStatus;
+        }
     }
 }

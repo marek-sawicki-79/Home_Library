@@ -9,7 +9,22 @@ namespace HomeLibrary.GUI.CnsoleInput
 {
     internal class LibraryManagement
     {
-        public List<Book> Books { get; set; }  = new List<Book>();
+        public static List<Location> Locations { get; set; } = new List<Location>()
+        {
+            new Location("house", "underground", ""),
+            new Location("house", "1st", "study"),
+            new Location("house", "2nd", "east bedroom"),
+            new Location("house", "attic", "")
+        };
+        public static List<BookStatus> BookStatuses { get; set; } = new List<BookStatus>()
+        {
+            new BookStatus(false, true, "jjj", "ooo"),
+        };
+        public List<Book> Books { get; set; } = new List<Book>()
+        {
+            new Book(1, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
+                "Sci-Fi", "I", 5,Locations[1], BookStatuses[0])
+        };
         public void AddBook(Book newBook)
         {
            Books.Add(newBook);

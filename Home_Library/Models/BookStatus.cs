@@ -12,5 +12,13 @@ namespace HomeLibrary.BusinessLogic.Models
         public bool isItYours { get; set; }
         public string? lendedToInfo { get; set; }
         public string? borrowedFromInfo { get; set; }
+
+        public BookStatus(bool isLended, bool isItYours, string? lendedToInfo, string? borrowedFromInfo)
+        {
+            this.isLended = isLended;
+            this.isItYours = isItYours;
+            this.lendedToInfo = lendedToInfo;
+            this.borrowedFromInfo = borrowedFromInfo;
+        }
     }
 }

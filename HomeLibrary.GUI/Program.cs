@@ -86,8 +86,7 @@ while (true)
                 {
                     library.IllegibleAnswer();
                 }
-                newBook.BookStatus = bookStatus;
-                newBook.Location = location;
+
 
             }
             else if(answer == "n")
@@ -97,13 +96,13 @@ while (true)
                 Console.WriteLine("Where did you get it from?");
                 bookStatus.borrowedFromInfo = Console.ReadLine();
                 library.AddLocation(location);
-                newBook.Location = location;
-                newBook.BookStatus = bookStatus;
-                            }
+            }
             else
             {
                 library.IllegibleAnswer();
             }
+            newBook.BookStatus = bookStatus;
+            newBook.Location = location;
             library.AddBook(newBook);
             break;
 
