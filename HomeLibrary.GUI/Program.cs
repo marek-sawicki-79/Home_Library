@@ -71,22 +71,22 @@ while (true)
 
             if (answer == "y")
             {
-                bookStatus.isItYours = true;
+                bookStatus.IsItYours = true;
                 Console.WriteLine("Have you lend it to someone? (Y/N)");
                 var input = Console.ReadLine().ToLower();
                 if (input == "y")
                 {
-                    bookStatus.isLended = true;
+                    bookStatus.IsLended = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                    bookStatus.lendedToInfo = Console.ReadLine();
-                    bookStatus.borrowedFromInfo = "";
+                    bookStatus.LendedToInfo = Console.ReadLine();
+                    bookStatus.BorrowedFromInfo = "";
                 }
                 else if (input == "n")
                 {
-                    bookStatus.isLended = false;
+                    bookStatus.IsLended = false;
                     library.AddLocation(location);
-                    bookStatus.lendedToInfo = "";
-                    bookStatus.borrowedFromInfo = "";
+                    bookStatus.LendedToInfo = "";
+                    bookStatus.BorrowedFromInfo = "";
                 }
                 else
                 {
@@ -97,11 +97,11 @@ while (true)
             }
             else if(answer == "n")
             {
-                bookStatus.isItYours = false;
-                bookStatus.isLended = false;
+                bookStatus.IsItYours = false;
+                bookStatus.IsLended = false;
                 Console.WriteLine("Where did you get it from?");
-                bookStatus.borrowedFromInfo = Console.ReadLine();
-                bookStatus.lendedToInfo = "";
+                bookStatus.BorrowedFromInfo = Console.ReadLine();
+                bookStatus.LendedToInfo = "";
                 library.AddLocation(location);
             }
             else

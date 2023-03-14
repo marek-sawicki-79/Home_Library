@@ -8,17 +8,17 @@ namespace HomeLibrary.BusinessLogic.Models
 {
     public class BookStatus
     {
-        public bool isLended { get; set; }
-        public bool isItYours { get; set; }
-        public string? lendedToInfo { get; set; }
-        public string? borrowedFromInfo { get; set; }
+        public bool IsLended { get; set; }
+        public bool IsItYours { get; set; }
+        public string LendedToInfo { get; set; }
+        public string BorrowedFromInfo { get; set; }
 
-        public BookStatus(bool isLended, bool isItYours, string? lendedToInfo, string? borrowedFromInfo)
+        public BookStatus(bool isLended, bool isItYours, string lendedToInfo, string borrowedFromInfo)
         {
-            this.isLended = isLended;
-            this.isItYours = isItYours;
-            this.lendedToInfo = lendedToInfo;
-            this.borrowedFromInfo = borrowedFromInfo;
+            IsLended = isLended;
+            IsItYours = isItYours;
+            LendedToInfo = lendedToInfo;
+            BorrowedFromInfo = borrowedFromInfo;
         }
     }
 }
