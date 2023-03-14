@@ -22,9 +22,15 @@ namespace HomeLibrary.GUI.CnsoleInput
         //};
         public static List<Book> Books { get; set; } = new List<Book>()
         {
-            new Book(1, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
-                "Sci-Fi", "I", "none", 5, 1, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null))
+            new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
+                "Sci-Fi", "I", "none", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+            new Book(1, "Eden", "Stanisław Lem", "Wydawnictwo Literackie Kraków-Wrocław",
+                "Sci-Fi", "IV", "Stabisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null))
         };
+        public List<Book> GetBooks()
+        {
+            return Books;
+        }
         public void AddBook(Book newBook)
         {
            Books.Add(newBook);

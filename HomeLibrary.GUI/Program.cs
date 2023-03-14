@@ -15,9 +15,13 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\nx to exit application.");
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
-var newBook = new Book();
-var bookStatus = new BookStatus();
-var location = new Location();
+void GetBooks()
+{
+    List<Book> Books = library.GetBooks();
+}
+//var newBook = new Book();
+//var bookStatus = new BookStatus();
+//var location = new Location();
 
 while (true)
 {
@@ -28,35 +32,35 @@ while (true)
             Console.Clear();
 
             Console.WriteLine("Enter book title:");
-            newBook.Title = Console.ReadLine();
+            var title = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("Type in the author:");
-            newBook.Author = Console.ReadLine();
+            var author = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("Enter publishing house:");
-            newBook.PublishingHouse = Console.ReadLine();
+            var publishingHouse = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("Enter the genre of the book.\n If you don't want to do that, press enter:");
-            newBook.Genre = Console.ReadLine();
+            var genre = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("Write in Roman numerals the edition of the book:");
-            newBook.Edition = Console.ReadLine();
+            var edition = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("If it is a part of a book series, enter it's name:");
-            newBook.SeriesTitle = Console.ReadLine();
+            var seriesTitle = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("When it was published:");
-            newBook.YearOfPublish = int.Parse(Console.ReadLine());
+            var yearOfPublish = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
             Console.WriteLine("If you've read it already, please rate it (1-5):");
-            newBook.YourRating = int.Parse(Console.ReadLine());
+            var yourRating = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
 
@@ -67,26 +71,31 @@ while (true)
 
             Console.WriteLine("Is this book yours (Y/N) or borrowed?");
             string answer = Console.ReadLine().ToLower();
+            bool isLended;
+            bool borrowedFrom;
+            bool isItYours;
+            string lendedToInfo;
+            string borrowedFromInfo;
 
 
             if (answer == "y")
             {
-                bookStatus.IsItYours = true;
+                isItYours = true;
                 Console.WriteLine("Have you lend it to someone? (Y/N)");
                 var input = Console.ReadLine().ToLower();
                 if (input == "y")
                 {
-                    bookStatus.IsLended = true;
+                     isLended = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                    bookStatus.LendedToInfo = Console.ReadLine();
-                    bookStatus.BorrowedFromInfo = "";
+                    lendedToInfo = Console.ReadLine();
+                    borrowedFromInfo = "";
                 }
                 else if (input == "n")
                 {
-                    bookStatus.IsLended = false;
+                    isLended = false;
                     library.AddLocation(location);
-                    bookStatus.LendedToInfo = "";
-                    bookStatus.BorrowedFromInfo = "";
+                    lendedToInfo = "";
+                    borrowedFromInfo = "";
                 }
                 else
                 {
@@ -97,17 +106,19 @@ while (true)
             }
             else if(answer == "n")
             {
-                bookStatus.IsItYours = false;
-                bookStatus.IsLended = false;
+                isItYours = false;
+                isLended = false;
                 Console.WriteLine("Where did you get it from?");
-                bookStatus.BorrowedFromInfo = Console.ReadLine();
-                bookStatus.LendedToInfo = "";
+                borrowedFromInfo = Console.ReadLine();
+                lendedToInfo = "";
                 library.AddLocation(location);
             }
             else
             {
                 library.IllegibleAnswer();
             }
+            //var booksCount = GetBooks();
+            var newBook = new Book();
             newBook.BookStatus = bookStatus;
             newBook.Location = location;
             library.AddBook(newBook);

@@ -23,7 +23,9 @@ namespace HomeLibrary.BusinessLogic.Models
         public Location Location { get; set; }
         public BookStatus BookStatus { get; set; }
 
-        public Book(int id, string title, string author, string publishingHouse, string genre, string edition, string seriesTitle, int yearOfPublish, int yourRating, Location location, BookStatus bookStatus)
+        public Book(int id, string title, string author, string publishingHouse, string genre, 
+            string edition, string seriesTitle, int yearOfPublish, int yourRating, 
+            Location location, BookStatus bookStatus)
         {
             Id = id;
             Title = title;
