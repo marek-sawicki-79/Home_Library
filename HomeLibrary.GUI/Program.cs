@@ -15,6 +15,7 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\nx to exit application.");
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
+
 void GetBooks()
 {
     List<Book> Books = library.GetBooks();
@@ -25,6 +26,15 @@ void GetBooks()
 
 while (true)
 {
+    Location location = null;
+    BookStatus bookStatus = null;
+    bool isLended;
+    bool borrowedFrom;
+    bool isItYours;
+    string lendedToInfo;
+    string borrowedFromInfo;
+    int id = library.GetBooks().Count;
+
     switch (userChoice)
     {
         case "1":
@@ -71,11 +81,7 @@ while (true)
 
             Console.WriteLine("Is this book yours (Y/N) or borrowed?");
             string answer = Console.ReadLine().ToLower();
-            bool isLended;
-            bool borrowedFrom;
-            bool isItYours;
-            string lendedToInfo;
-            string borrowedFromInfo;
+            
 
 
             if (answer == "y")
@@ -117,8 +123,8 @@ while (true)
             {
                 library.IllegibleAnswer();
             }
-            //var booksCount = GetBooks();
-            var newBook = new Book();
+            id = id++;
+            var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus);
             newBook.BookStatus = bookStatus;
             newBook.Location = location;
             library.AddBook(newBook);
