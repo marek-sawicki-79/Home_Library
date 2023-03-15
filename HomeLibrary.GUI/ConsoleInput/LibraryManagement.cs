@@ -58,7 +58,6 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         public void AddLocation(Location newLocation)
         {
-            //var location = new Location();
             Console.Clear();
             Console.WriteLine("Now we are entering the book Location in your home library.");
             Console.WriteLine("Press any key, when you're ready.");

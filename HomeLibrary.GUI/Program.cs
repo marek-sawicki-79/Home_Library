@@ -26,14 +26,14 @@ void GetBooks()
 
 while (true)
 {
-    Location location = null;
-    BookStatus bookStatus = null;
+    Location location = new Location("", "", "");
+    BookStatus bookStatus = new BookStatus(false, false, "", "");
     bool isLended;
     bool borrowedFrom;
     bool isItYours;
     string lendedToInfo;
     string borrowedFromInfo;
-    int id = library.GetBooks().Count;
+    int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
 
     switch (userChoice)
     {
@@ -81,7 +81,7 @@ while (true)
 
             Console.WriteLine("Is this book yours (Y/N) or borrowed?");
             string answer = Console.ReadLine().ToLower();
-            
+
 
 
             if (answer == "y")
