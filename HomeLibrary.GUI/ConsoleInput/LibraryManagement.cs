@@ -35,15 +35,19 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
            Books.Add(newBook);
 
-            Console.WriteLine($"You have successfully added a new book to your home library!" +
-                              $"\nit is a {newBook.Genre} named {newBook.Title}, written by {newBook.Author}" +
-                              $"\nand published by {newBook.PublishingHouse}" +
-                              $"\n edition no. {newBook.Edition}.\n" +
-                              $"It was published in {newBook.YearOfPublish}. It is a part " +
-                              $"of a {newBook.SeriesTitle} series." +
-                              $"\n your rate is {newBook.YourRating} out of 5." +
-                              $"\n\nthe book is located in {newBook.Location.Building} " +
-                              $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
+            Console.WriteLine($"You have successfully added a new book to your home library!");
+        }
+        public void ShowBookDetails(Book book)
+        {
+            Console.WriteLine($"{book.Title}\nwritten by {book.Author}\n it is a { book.Genre }"+
+                              $"\n published by {book.PublishingHouse}" +
+                              $"\n edition no. {book.Edition}." +
+                              $"\nIt was published in {book.YearOfPublish}. It is a part " +
+                              $"of a {book.SeriesTitle} series." +
+                              $"\n your rate is {book.YourRating} out of 5." +
+                              $"\n\nthe book is located in {book.Location.Building} " +
+                              $"on {book.Location.Floor} in {book.Location.Room} room.");
+            ShowStatus(book.BookStatus);
         }
         internal void ShowStatus(BookStatus status)
         {
