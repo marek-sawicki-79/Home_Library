@@ -8,18 +8,7 @@ using HomeLibrary.BusinessLogic.Models;
 namespace HomeLibrary.GUI.CnsoleInput
 {
     internal class LibraryManagement
-    {
-        //static List<Location> Locations { get; set; } = new List<Location>()
-        //{
-        //    new Location("house", "underground", ""),
-        //    new Location("house", "1st", "study"),
-        //    new Location("house", "2nd", "east bedroom"),
-        //    new Location("house", "attic", "")
-        //};
-        //public static List<BookStatus> BookStatuses { get; set; } = new List<BookStatus>()
-        //{
-        //    new BookStatus(false, true, "jjj", "ooo"),
-        //};
+    {       
         public static List<Book> Books { get; set; } = new List<Book>()
         {
             new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
@@ -37,8 +26,9 @@ namespace HomeLibrary.GUI.CnsoleInput
 
             Console.WriteLine($"You have successfully added a new book to your home library!");
         }
-        public void ShowBookDetails(Book book)
+        internal void ShowBookDetails(Book book)
         {
+
             Console.WriteLine($"{book.Title}\nwritten by {book.Author}\n it is a { book.Genre }"+
                               $"\n published by {book.PublishingHouse}" +
                               $"\n edition no. {book.Edition}." +
@@ -48,6 +38,12 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"\n\nthe book is located in {book.Location.Building} " +
                               $"on {book.Location.Floor} in {book.Location.Room} room.");
             ShowStatus(book.BookStatus);
+        }
+
+        public void SearchBookByTitle(string title)
+        {
+            var book = Books.FirstOrDefault(x => x.Title.ToLower().Contains(title.ToLower()));
+            ShowBookDetails(book);
         }
         internal void ShowStatus(BookStatus status)
         {
@@ -99,8 +95,7 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
             foreach (var book in Books)
             {
-                Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}" +
-                                  $"\n\t edition no. {book.Edition}.");
+                Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
             }
         }
     }

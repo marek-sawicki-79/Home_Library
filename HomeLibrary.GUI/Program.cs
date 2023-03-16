@@ -12,6 +12,7 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\n1. to add new book to your home collection," +
                   "\n2. to see all books stored in this app," +
                   "\n3. to remove book from your collection," +
+                  "\n4. show all available information about a specific book," +
                   "\nx to exit application.");
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
@@ -145,6 +146,12 @@ while (true)
             library.RemoveBook(bookToRemove);
             break;
 
+        case "4":
+            Console.WriteLine("write the title of the book you are looking for:");
+            string bookToSearch = Console.ReadLine();
+            library.SearchBookByTitle(bookToSearch);
+            break;
+
         case "x":
             Console.WriteLine("Goodbye");
             Thread.Sleep(3000);
@@ -159,6 +166,7 @@ while (true)
                   "\n1.to add new book to your home collection, " +
                   "\n2. to see all books stored in this app," +
                   "\n3. to remove book from your collection," +
+                  "\n4. show all available information about a specific book," +
                   "\nx to exit application.");
     userChoice = Console.ReadLine();
 
