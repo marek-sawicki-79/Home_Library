@@ -45,6 +45,16 @@ namespace HomeLibrary.GUI.CnsoleInput
             var book = Books.FirstOrDefault(x => x.Title.ToLower().Contains(title.ToLower()));
             ShowBookDetails(book);
         }
+        public void SearchBooksByGenre(string genre)
+        {
+            var books = Books.Where(g => g.Genre.ToLower().Contains(genre.ToLower())).ToList();
+
+            foreach (var book in books)
+            {
+                ShowBookDetails(book);
+            }
+
+        }
         internal void ShowStatus(BookStatus status)
         {
             if(status.IsItYours == true & status.IsLended == true)

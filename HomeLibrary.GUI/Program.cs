@@ -13,6 +13,7 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\n2. to see all books stored in this app," +
                   "\n3. to remove book from your collection," +
                   "\n4. show all available information about a specific book," +
+                  "\n5. find books by genre in your collection," +
                   "\nx to exit application.");
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
@@ -147,9 +148,14 @@ while (true)
             break;
 
         case "4":
-            Console.WriteLine("write the title of the book you are looking for:");
+            Console.WriteLine("Write the title of the book you are looking for:");
             string bookToSearch = Console.ReadLine();
             library.SearchBookByTitle(bookToSearch);
+            break;
+        case "5":
+            Console.WriteLine("What book genre are you looking for?");
+            string genreToFind = Console.ReadLine();
+            library.SearchBooksByGenre(genreToFind);
             break;
 
         case "x":
@@ -167,6 +173,7 @@ while (true)
                   "\n2. to see all books stored in this app," +
                   "\n3. to remove book from your collection," +
                   "\n4. show all available information about a specific book," +
+                  "\n5. find books by genre in your collection," +
                   "\nx to exit application.");
     userChoice = Console.ReadLine();
 
