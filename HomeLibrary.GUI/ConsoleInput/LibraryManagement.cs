@@ -45,6 +45,21 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"\n\nthe book is located in {newBook.Location.Building} " +
                               $"on {newBook.Location.Floor} in {newBook.Location.Room} room.");
         }
+        internal void ShowStatus(BookStatus status)
+        {
+            if(status.IsItYours == true & status.IsLended == true)
+            {
+                Console.WriteLine($"The book has been lent\nHere is some information about it:\n{status.LendedToInfo} ");
+            }
+            else if(status.IsItYours == true & status.IsLended == false)
+            {
+                Console.WriteLine("You haven't lent it. It should be int the entered location. ");
+            }
+            else if(status.IsItYours == false)
+            {
+                Console.WriteLine($"This book is borrowed.\nHere is some information about it:\n{status.BorrowedFromInfo}");
+            }
+        }
 
         public void IllegibleAnswer()
         {
