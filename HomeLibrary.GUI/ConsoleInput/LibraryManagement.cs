@@ -14,7 +14,9 @@ namespace HomeLibrary.GUI.CnsoleInput
             new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
                 "Sci-Fi novel", "I", "none", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
             new Book(1, "Eden", "Stanisław Lem", "Wydawnictwo Literackie Kraków-Wrocław",
-                "Sci-Fi novel", "IV", "Stabisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null))
+                "Sci-Fi novel", "IV", "Stabisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+            new Book(2, "Bogowie, Honor i Ankh-Morpork", "Terry Pratchett", "Prószyński i S-ka",
+                "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null))
         };
         public List<Book> GetBooks()
         {
@@ -54,6 +56,17 @@ namespace HomeLibrary.GUI.CnsoleInput
                 ShowBookDetails(book);
             }
 
+        }
+        internal void ShowGenre(Book book)
+        {
+            Console.WriteLine(book.Genre);
+        }
+        public void SearchGenres()
+        {
+            foreach (var book in Books)
+            {
+                Console.WriteLine($"\t{book.Genre}");
+            }
         }
         internal void ShowStatus(BookStatus status)
         {

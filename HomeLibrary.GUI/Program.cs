@@ -14,7 +14,9 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\n3. to remove book from your collection," +
                   "\n4. show all available information about a specific book," +
                   "\n5. find books by genre in your collection," +
-                  "\nx to exit application.");
+                  "\n6. if you want to see the list of book genres in your collection," +
+                  "\n'X' to exit application.");
+Console.WriteLine();
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
 
@@ -152,10 +154,16 @@ while (true)
             string bookToSearch = Console.ReadLine();
             library.SearchBookByTitle(bookToSearch);
             break;
+
         case "5":
             Console.WriteLine("What book genre are you looking for?");
             string genreToFind = Console.ReadLine();
             library.SearchBooksByGenre(genreToFind);
+            break;
+
+        case "6":
+            Console.WriteLine("Available book genres:");
+            library.SearchGenres();
             break;
 
         case "x":
@@ -167,14 +175,16 @@ while (true)
             Console.WriteLine("Invalid input");
             break;
     }
-
-    Console.WriteLine("Choose your action" +
+    Console.WriteLine();
+    Console.WriteLine("Choose your action:" +
                   "\n1.to add new book to your home collection, " +
                   "\n2. to see all books stored in this app," +
                   "\n3. to remove book from your collection," +
                   "\n4. show all available information about a specific book," +
                   "\n5. find books by genre in your collection," +
-                  "\nx to exit application.");
+                  "\n6. if you want to see the list of book genres in your collection," +
+                  "\n'X' to exit application.");
+    Console.WriteLine();
     userChoice = Console.ReadLine();
 
 
