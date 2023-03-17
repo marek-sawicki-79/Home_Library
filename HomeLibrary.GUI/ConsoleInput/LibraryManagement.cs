@@ -70,10 +70,17 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void RomanNumeralsCheck(string editionString)
         {
-            char[] romanNumerals = new[] { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
-            char[] userInput = editionString.ToCharArray();
+            List<char> romanNumerals = new List<char>{ 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+            List<char> userInput = editionString.ToCharArray().ToList();
             bool areRomanNumerals;
-        }
+            bool isRomanNumeral;
+            
+                foreach (var numeral in userInput)
+                {
+                    isRomanNumeral = romanNumerals.Contains(numeral);
+                }
+            
+            
         internal void ShowStatus(BookStatus status)
         {
             if(status.IsItYours == true & status.IsLended == true)
