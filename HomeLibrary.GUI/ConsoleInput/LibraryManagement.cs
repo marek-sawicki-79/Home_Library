@@ -24,14 +24,14 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void AddBook(Book newBook)
         {
-           Books.Add(newBook);
+            Books.Add(newBook);
 
             Console.WriteLine($"You have successfully added a new book to your home library!");
         }
         internal void ShowBookDetails(Book book)
         {
 
-            Console.WriteLine($"{book.Title}\nwritten by {book.Author}\n it is a { book.Genre }"+
+            Console.WriteLine($"{book.Title}\nwritten by {book.Author}\n it is a {book.Genre}" +
                               $"\n published by {book.PublishingHouse}" +
                               $"\n edition no. {book.Edition}." +
                               $"\nIt was published in {book.YearOfPublish}. It is a part " +
@@ -67,6 +67,12 @@ namespace HomeLibrary.GUI.CnsoleInput
             {
                 Console.WriteLine($"\t{book.Genre}");
             }
+        }
+        public void RomanNumeralsCheck(string editionString)
+        {
+            char[] romanNumerals = new[] { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+            char[] userInput = editionString.ToCharArray();
+            bool areRomanNumerals;
         }
         internal void ShowStatus(BookStatus status)
         {
