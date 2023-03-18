@@ -62,7 +62,9 @@ while (true)
             Console.WriteLine("");
 
             Console.WriteLine("Write in Roman numerals the edition of the book:");
-            var edition = Console.ReadLine();
+            
+            
+            //var edition = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("If it is a part of a book series, enter it's name:");
