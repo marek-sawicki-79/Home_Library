@@ -68,26 +68,12 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
-        public void RomanNumeralsCheck(string editionString /*out bool areRomanNumerals*/) //to be finished later//regex?
+        public void RomanNumeralsCheck(string editionString) //to be finished later//regex?
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
             List<char> userInput = editionString.ToCharArray().ToList();
-            
-                bool areRomanNumerals = romanNumerals.All(userInput.Contains);
+            var areRomanNumerals = userInput.All(romanNumerals.Contains);
 
-                Console.WriteLine("The given input is not in required format.\n Please use characters from the set:" +
-                        "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
-            
-            //bool isRomanNumeral;
-
-            //foreach (var numeral in userInput)
-            //{
-            //    do
-            //    {
-            //        isRomanNumeral = numeral.ToString().Any(romanNumerals.Contains);
-            //    }
-            //    while (isRomanNumeral == true);
-            //}
 
         }
         internal void ShowStatus(BookStatus status)
