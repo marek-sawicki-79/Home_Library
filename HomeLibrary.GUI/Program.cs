@@ -65,16 +65,17 @@ while (true)
             var inputToCheck = Console.ReadLine();
             string edition = "I";
             bool areRomanNumerals = false;
-            library.RomanNumeralsCheck(inputToCheck, out areRomanNumerals);
-            if(areRomanNumerals == true)
-            {
-                edition = inputToCheck;
-            }
-            else
-            {
-                Console.WriteLine("The given input is not in required format.\n Please use characters from the set:" +
-                    "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
-            }
+            library.RomanNumeralsCheck(inputToCheck /*out areRomanNumerals*/);
+            edition = inputToCheck;
+            //if(areRomanNumerals == true)
+            //{
+            //    edition = inputToCheck;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The given input is not in required format.\n Please use characters from the set:" +
+            //        "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
+            //}
             inputToCheck = Console.ReadLine();
             Console.WriteLine("");
 
