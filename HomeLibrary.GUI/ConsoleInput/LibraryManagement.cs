@@ -86,7 +86,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             {
                 Console.WriteLine("You haven't lent it. It should be int the entered location. ");
             }
-            else if(status.IsItYours == false)
+            else if(status.IsItYours == false &(status.IsLended == false || status.IsLended == true))
             {
                 Console.WriteLine($"This book is borrowed.\nHere is some information about it:\n{status.BorrowedFromInfo}");
             }

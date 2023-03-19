@@ -33,7 +33,7 @@ while (true)
     Location location = new Location("", "", "");
     BookStatus bookStatus = new BookStatus(false, false, "", "");
     bool isLended;
-    bool borrowedFrom;
+    //bool borrowedFrom;
     bool isItYours;
     string lendedToInfo;
     string borrowedFromInfo;
@@ -77,7 +77,7 @@ while (true)
             {
                 edition = inputToCheck;
             }
-            inputToCheck = Console.ReadLine();
+            //inputToCheck = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("If it is a part of a book series, enter it's name:");
@@ -110,13 +110,14 @@ while (true)
                 var input = Console.ReadLine().ToLower();
                 if (input == "y")
                 {
-                     isLended = true;
+                    isLended = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
                     lendedToInfo = Console.ReadLine();
                     borrowedFromInfo = "";
                 }
                 else if (input == "n")
                 {
+                    isItYours=true;
                     isLended = false;
                     library.AddLocation(location);
                     lendedToInfo = "";
