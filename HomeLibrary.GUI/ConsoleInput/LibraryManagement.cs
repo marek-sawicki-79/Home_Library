@@ -92,10 +92,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             }
         }
 
-        public void IllegibleAnswer()
-        {
-            Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
-        }
+      
 
         public void RemoveBook(string bookToRemove)
         {

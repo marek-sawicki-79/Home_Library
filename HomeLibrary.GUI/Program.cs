@@ -110,43 +110,45 @@ while (true)
                 var input = Console.ReadLine().ToLower();
                 if (input == "y")
                 {
-                    isLended = true;
+                    bookStatus.IsLended = isLended = true;
+                    bookStatus.IsItYours = true;
                     Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                    lendedToInfo = Console.ReadLine();
-                    borrowedFromInfo = "";
+                    bookStatus.LendedToInfo = lendedToInfo = Console.ReadLine();
+                    bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
                 }
                 else if (input == "n")
                 {
-                    isItYours=true;
-                    isLended = false;
+                    bookStatus.IsItYours = isItYours = true;
+                    bookStatus.IsLended = isLended = false;
                     library.AddLocation(location);
-                    lendedToInfo = "";
-                    borrowedFromInfo = "";
+                    bookStatus.LendedToInfo = lendedToInfo = "";
+                    bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
                 }
                 else
                 {
-                    library.IllegibleAnswer();
+                    Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
                 }
 
 
             }
             else if(answer == "n")
             {
-                isItYours = false;
-                isLended = false;
+                bookStatus.IsItYours = isItYours = false;
+                bookStatus.IsLended = isLended = isLended = false;
                 Console.WriteLine("Where did you get it from?");
-                borrowedFromInfo = Console.ReadLine();
-                lendedToInfo = "";
+                bookStatus.BorrowedFromInfo = bookStatus.BorrowedFromInfo = borrowedFromInfo = Console.ReadLine();
+                bookStatus.LendedToInfo = lendedToInfo = "";
                 library.AddLocation(location);
             }
             else
             {
-                library.IllegibleAnswer();
+                Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
             }
             id = id++;
+            
             var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus);
-            newBook.BookStatus = bookStatus;
-            newBook.Location = location;
+            //newBook.BookStatus = bookStatus;
+            //newBook.Location = location;
             library.AddBook(newBook);
             break;
 
