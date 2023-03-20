@@ -40,12 +40,17 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"\n\nthe book is located in {book.Location.Building} " +
                               $"on {book.Location.Floor} in {book.Location.Room} room.");
             ShowStatus(book.BookStatus);
+            Console.WriteLine();
         }
 
         public void SearchBookByTitle(string title)
         {
-            var book = Books.FirstOrDefault(x => x.Title.ToLower().Contains(title.ToLower()));
-            ShowBookDetails(book);
+            var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
+            foreach (var book in books)
+            {
+                ShowBookDetails(book);
+            }
+
         }
         public void SearchBooksByGenre(string genre)
         {
@@ -93,7 +98,6 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
 
       
-
         public void RemoveBook(string bookToRemove)
         {
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
