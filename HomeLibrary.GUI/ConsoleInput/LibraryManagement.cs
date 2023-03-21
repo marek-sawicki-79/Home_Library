@@ -73,11 +73,11 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
-        public void RomanNumeralsCheck(string editionString) //to be finished later//regex?
+        public void RomanNumeralsCheck(string editionString) //to be finished later
         {
-            IEnumerable<string> romanNumerals = new List<string> { "I", "V", "X", "L", "C", "D", "M" };
-            IEnumerable<string> userInput = (IEnumerable<string>)editionString.ToCharArray().ToList();
-            var areRomanNumerals = romanNumerals.Any(s => userInput.Contains(s));
+            //List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+            //List<char> userInput = editionString.ToCharArray().ToList();
+            //var areRomanNumerals = !romanNumerals.All(s => userInput.Contains(s));
 
 
         }
@@ -96,8 +96,6 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"This book is borrowed.\nHere is some information about it:\n{status.BorrowedFromInfo}");
             }
         }
-
-      
         public void RemoveBook(string bookToRemove)
         {
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
