@@ -75,8 +75,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void RomanNumeralsCheck(string editionString) //to be finished later//regex?
         {
-            List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
-            List<char> userInput = editionString.ToCharArray().ToList();
+            IEnumerable<string> romanNumerals = new List<string> { "I", "V", "X", "L", "C", "D", "M" };
+            IEnumerable<string> userInput = (IEnumerable<string>)editionString.ToCharArray().ToList();
             var areRomanNumerals = romanNumerals.Any(s => userInput.Contains(s));
 
 
