@@ -77,7 +77,7 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
             List<char> userInput = editionString.ToCharArray().ToList();
-            var areRomanNumerals = userInput.All(romanNumerals.Contains);
+            var areRomanNumerals = romanNumerals.Any(s => userInput.Contains(s));
 
 
         }
