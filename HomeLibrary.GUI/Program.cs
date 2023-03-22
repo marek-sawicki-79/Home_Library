@@ -62,21 +62,19 @@ while (true)
             Console.WriteLine("");
 
             Console.WriteLine("Write in Roman numerals the edition of the book:");
-            //string inputToCheck = Console.ReadLine();
-            string edition = Console.ReadLine();  //"I";
-           // bool areRomanNumerals = false;
-            //edition = inputToCheck;
-            //if (areRomanNumerals != true)
-            //{
-            //    library.RomanNumeralsCheck(inputToCheck);
-            //    Console.WriteLine("Please use characters from the set:" +
-            //        "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
-            //    inputToCheck = Console.ReadLine();
-            //}
-            //else
-            //{
-            //    edition = inputToCheck;
-            //}
+            string inputToCheck = Console.ReadLine();
+            //string edition = "I";
+            bool areRomanNumerals = library.RomanNumeralsCheck(inputToCheck);
+            if (areRomanNumerals != true)
+            {
+                Console.WriteLine("Please use characters from the set:" +
+                    "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
+                inputToCheck = Console.ReadLine();
+            }
+            else
+            {
+                string edition = inputToCheck;
+            }
             //inputToCheck = Console.ReadLine();
             Console.WriteLine("");
 
