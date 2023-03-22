@@ -75,11 +75,9 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void RomanNumeralsCheck(string editionString) //to be finished later
         {
-            //List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
-            //List<char> userInput = editionString.ToCharArray().ToList();
-            //var areRomanNumerals = !romanNumerals.All(s => userInput.Contains(s));
-
-
+            List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+            List<char> userInput = editionString.ToCharArray().ToList();
+            var areRomanNumerals = userInput.Intersect(romanNumerals).Count() == userInput.Count();
         }
         internal void ShowStatus(BookStatus status)
         {
