@@ -73,7 +73,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
-        public void RomanNumeralsCheck(string editionString) //to be finished later
+        public void RomanNumeralsCheck(string editionString)
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
             List<char> userInput = editionString.ToCharArray().ToList();
