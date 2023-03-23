@@ -73,12 +73,37 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
-        public bool RomanNumeralsCheck(string editionString)
+        public string RomanNumeralsCheck(string editionString)
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
-            List<char> userInput = editionString.ToCharArray().ToList();
-            var areRomanNumerals = userInput.Intersect(romanNumerals).Count() == userInput.Count();
-            return areRomanNumerals;
+            bool allOfUserInputIsInRomanNumerals;
+            bool isValid = false;
+            do
+            {
+                
+                if (string.IsNullOrEmpty(editionString))
+                {
+                    Console.WriteLine("Invalid data");
+                }
+                else
+                {
+                    List<char> userInput = editionString.ToCharArray().ToList();
+                    allOfUserInputIsInRomanNumerals = userInput.All(c => romanNumerals.Contains(c));
+                    Console.WriteLine(allOfUserInputIsInRomanNumerals);
+                    if (allOfUserInputIsInRomanNumerals == false)
+                    {
+                        Console.WriteLine("Please use characters from the set:" +
+                        "\n'I', 'V', 'X', 'L', 'C', 'D', 'M'  ");
+                        
+                    }
+                    else
+                    {
+                        
+                        isValid = true;
+                    }
+                }
+            } while (isValid == false);
+            return editionString;
         }
         internal void ShowStatus(BookStatus status)
         {
