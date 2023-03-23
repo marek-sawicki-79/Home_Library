@@ -73,13 +73,16 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
-        public string RomanNumeralsCheck(string inputToCheck, out string edition)
+        public string RomanNumeralsCheck()
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
-            bool allOfUserInputIsInRomanNumerals;
+            string edition = "";
             bool isValid = false;
             do
             {
+                Console.WriteLine("Write in Roman numerals the edition of the book:");
+                string inputToCheck = Console.ReadLine();
+
                 if (string.IsNullOrEmpty(inputToCheck))
                 {
                     Console.WriteLine("Invalid data");
@@ -87,7 +90,8 @@ namespace HomeLibrary.GUI.CnsoleInput
                 else
                 {
                     List<char> userInput = inputToCheck.ToCharArray().ToList();
-                    allOfUserInputIsInRomanNumerals = userInput.All(c => romanNumerals.Contains(c));
+                    bool allOfUserInputIsInRomanNumerals = userInput.All(c => romanNumerals.Contains(c));
+
                     if (allOfUserInputIsInRomanNumerals == false)
                     {
                         Console.WriteLine("Please use characters from the set:" +
@@ -95,11 +99,12 @@ namespace HomeLibrary.GUI.CnsoleInput
                     }
                     else
                     {
+                        edition = inputToCheck;
                         isValid = true;
                     }
                 }
             } while (isValid == false);
-            edition = inputToCheck;
+
             return edition;
         }
         internal void ShowStatus(BookStatus status)
