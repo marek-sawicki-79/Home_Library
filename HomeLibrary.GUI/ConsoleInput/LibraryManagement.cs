@@ -75,6 +75,7 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public string EnterTitle()
         {
+            bool isValid = false;
             var title = "";
             Console.WriteLine("Enter book title:");
             do
@@ -91,8 +92,9 @@ namespace HomeLibrary.GUI.CnsoleInput
                 else
                 {
                     title = input;
+                    isValid = true;
                 }
-            } while (title.Length >= 100);
+            } while (isValid == false);
             return title;
         }
 
