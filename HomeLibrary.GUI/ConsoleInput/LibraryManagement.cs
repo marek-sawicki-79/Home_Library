@@ -83,9 +83,9 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter the title"); 
+                    Console.WriteLine("Please enter the title");
                 }
-                else if(input.Length >= 10)
+                else if(input.Length >= 100)
                 {
                     Console.WriteLine($"The Title {input} is to long. Please keep it up to 100 characters.");
                 }
