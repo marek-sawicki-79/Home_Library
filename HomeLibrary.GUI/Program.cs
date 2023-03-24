@@ -56,11 +56,10 @@ while (true)
             string genre = library.EnterBookGenre();
             Console.WriteLine();
 
-            string edition = library.RomanNumeralsCheck();
+            string edition = library.RomanNumeralsInput();
             Console.WriteLine();
 
-            Console.WriteLine("If it is a part of a book series, enter it's name:");
-            var seriesTitle = Console.ReadLine();
+            string seriesTitle = library.SeriesTitleInput();
             Console.WriteLine();
 
             Console.WriteLine("When it was published:");

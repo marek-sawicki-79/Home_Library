@@ -169,7 +169,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return genre;
         }
-        public string RomanNumeralsCheck()
+        public string RomanNumeralsInput()
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
             string edition = "";
@@ -202,6 +202,30 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
 
             return edition;
+        }
+        public string SeriesTitleInput()
+        {
+            bool isValid = false;
+            var series = "Book series";
+            Console.WriteLine("If it is a part of a book series, enter it's name:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (input.Length >= 100)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                }
+                else
+                {
+                    series = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return series;
         }
         internal void ShowStatus(BookStatus status)
         {
