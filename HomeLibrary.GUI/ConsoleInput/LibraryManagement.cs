@@ -121,7 +121,30 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return author;
         }
-
+        public string EnterPublishingHouse()
+        {
+            bool isValid = false;
+            var publishingHouse = "";
+            Console.WriteLine("Type in the Publishing House:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (input.Length >= 100)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                }
+                else
+                {
+                    publishingHouse = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return publishingHouse;
+        }
         public string RomanNumeralsCheck()
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
