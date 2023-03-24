@@ -73,6 +73,29 @@ namespace HomeLibrary.GUI.CnsoleInput
                 Console.WriteLine($"\t{book.Genre}");
             }
         }
+        public string EnterTitle()
+        {
+            var title = "";
+            Console.WriteLine("Enter book title:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter the title"); 
+                }
+                else if(input.Length >= 10)
+                {
+                    Console.WriteLine($"The Title {input} is to long. Please keep it up to 100 characters.");
+                }
+                else
+                {
+                    title = input;
+                }
+            } while (title.Length >= 100);
+            return title;
+        }
+
         public string RomanNumeralsCheck()
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
@@ -81,7 +104,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             do
             {
                 Console.WriteLine("Write in Roman numerals the edition of the book:");
-                string inputToCheck = Console.ReadLine();
+                var inputToCheck = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(inputToCheck))
                 {

@@ -44,9 +44,7 @@ while (true)
         case "1":
 
             Console.Clear();
-
-            Console.WriteLine("Enter book title:");
-            var title = Console.ReadLine();
+            string title = library.EnterTitle(); ;
             Console.WriteLine("");
 
             Console.WriteLine("Type in the author:");
