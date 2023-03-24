@@ -62,8 +62,7 @@ while (true)
             string seriesTitle = library.SeriesTitleInput();
             Console.WriteLine();
 
-            Console.WriteLine("When it was published:");
-            var yearOfPublish = int.Parse(Console.ReadLine());
+            int yearOfPublish = library.YearOfPublishInput();
             Console.WriteLine();
 
             Console.WriteLine("If you've read it already, please rate it (1-5):");

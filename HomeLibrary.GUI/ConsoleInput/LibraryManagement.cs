@@ -227,6 +227,37 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return series;
         }
+        public int YearOfPublishInput()
+        {
+            bool isValid = false;
+            var yearOfPublish = 0;
+            DateTime currentDate = DateTime.Now;
+            int currentYear = (int)currentDate.Year;
+            Console.WriteLine("When it was published:");
+            do
+            {
+                string input = Console.ReadLine();
+                bool isInt = int.TryParse(input, out int result);
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (isInt == false)
+                {
+                    Console.WriteLine("Please enter when the book was published using numbers.");
+                }
+                else if (isInt && currentYear < result || result < 1800)
+                {
+                    Console.WriteLine($"The year you have entered >{result}< is incorrect. Please enter a value between 1800 and current year.");
+                }
+                else
+                {
+                    yearOfPublish = result;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return yearOfPublish;
+        }
         internal void ShowStatus(BookStatus status)
         {
             if(status.IsItYours == true & status.IsLended == true)
