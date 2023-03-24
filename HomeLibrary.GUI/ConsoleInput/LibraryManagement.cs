@@ -83,11 +83,11 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter the title");
+                    Console.WriteLine("Please enter required data");
                 }
                 else if(input.Length >= 100)
                 {
-                    Console.WriteLine($"The Title {input} is to long. Please keep it up to 100 characters.");
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
                 }
                 else
                 {
@@ -96,6 +96,30 @@ namespace HomeLibrary.GUI.CnsoleInput
                 }
             } while (isValid == false);
             return title;
+        }
+        public string EnterTheAuthor()
+        {
+            bool isValid = false;
+            var author = "";
+            Console.WriteLine("Type in the author:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (input.Length >= 100)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                }
+                else
+                {
+                    author = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return author;
         }
 
         public string RomanNumeralsCheck()

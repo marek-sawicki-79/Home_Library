@@ -44,35 +44,34 @@ while (true)
         case "1":
 
             Console.Clear();
-            string title = library.EnterTitle(); ;
-            Console.WriteLine("");
+            string title = library.EnterTitle();
+            Console.WriteLine();
 
-            Console.WriteLine("Type in the author:");
-            var author = Console.ReadLine();
-            Console.WriteLine("");
+            string author = library.EnterTheAuthor();
+            Console.WriteLine();
 
             Console.WriteLine("Enter publishing house:");
             var publishingHouse = Console.ReadLine();
-            Console.WriteLine("");
+            Console.WriteLine();
 
             Console.WriteLine("Enter the genre of the book.\n If you don't want to do that, press enter:");
             var genre = Console.ReadLine();
-            Console.WriteLine("");
+            Console.WriteLine();
 
             string edition = library.RomanNumeralsCheck();
-            Console.WriteLine("");
+            Console.WriteLine();
 
             Console.WriteLine("If it is a part of a book series, enter it's name:");
             var seriesTitle = Console.ReadLine();
-            Console.WriteLine("");
+            Console.WriteLine();
 
             Console.WriteLine("When it was published:");
             var yearOfPublish = int.Parse(Console.ReadLine());
-            Console.WriteLine("");
+            Console.WriteLine();
 
             Console.WriteLine("If you've read it already, please rate it (1-5):");
             var yourRating = int.Parse(Console.ReadLine());
-            Console.WriteLine("");
+            Console.WriteLine();
 
 
             Console.Clear();
