@@ -145,6 +145,30 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return publishingHouse;
         }
+        public string EnterBookGenre()
+        {
+            bool isValid = false;
+            var genre = "";
+            Console.WriteLine("Enter the genre of the book:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (input.Length >= 100)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                }
+                else
+                {
+                    genre = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return genre;
+        }
         public string RomanNumeralsCheck()
         {
             List<char> romanNumerals = new List<char> { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };

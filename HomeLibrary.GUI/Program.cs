@@ -50,12 +50,10 @@ while (true)
             string author = library.EnterTheAuthor();
             Console.WriteLine();
 
-            Console.WriteLine("Enter publishing house:");
-            var publishingHouse = Console.ReadLine();
+            string publishingHouse = library.EnterPublishingHouse();
             Console.WriteLine();
 
-            Console.WriteLine("Enter the genre of the book.\n If you don't want to do that, press enter:");
-            var genre = Console.ReadLine();
+            string genre = library.EnterBookGenre();
             Console.WriteLine();
 
             string edition = library.RomanNumeralsCheck();
@@ -127,7 +125,7 @@ while (true)
                 Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
             }
             id = id++;
-            
+
             var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus);
             //newBook.BookStatus = bookStatus;
             //newBook.Location = location;
