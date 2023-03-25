@@ -65,8 +65,7 @@ while (true)
             int yearOfPublish = library.YearOfPublishInput();
             Console.WriteLine();
 
-            Console.WriteLine("If you've read it already, please rate it (1-5):");
-            var yourRating = int.Parse(Console.ReadLine());
+            int yourRating = library.RateYourBook();
             Console.WriteLine();
 
 

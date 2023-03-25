@@ -258,6 +258,36 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return yearOfPublish;
         }
+
+        public int RateYourBook()
+        {
+            bool isValid = false;
+            var rating = 0;
+            Console.WriteLine("If you've read it already, please rate it (1-5):");
+            do
+            {
+                string input = Console.ReadLine();
+                bool isInt = int.TryParse(input, out int result);
+                if (string.IsNullOrEmpty(input))
+                {
+                    Console.WriteLine("Please enter required data");
+                }
+                else if (isInt == false)
+                {
+                    Console.WriteLine("Please rate the book with numerical values.");
+                }
+                else if (isInt && 5 < result || result < 1)
+                {
+                    Console.WriteLine($"Your rating for this book >{result}< is off the charts. Please rate the book on a scale between 1 and 5.");
+                }
+                else
+                {
+                    rating = result;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return rating;
+        }
         internal void ShowStatus(BookStatus status)
         {
             if(status.IsItYours == true & status.IsLended == true)
