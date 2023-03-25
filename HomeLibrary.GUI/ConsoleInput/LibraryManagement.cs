@@ -288,6 +288,80 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return rating;
         }
+
+        public BookStatus AddBookStatus()
+        {
+            BookStatus bookStatus = new BookStatus(false, false, "", "");
+            bool isLended;
+            bool isItYours;
+            string lendedToInfo;
+            string borrowedFromInfo;
+            bool isValid = false;
+            bookStatus.LendedToInfo = null;
+            bookStatus.BorrowedFromInfo = null;
+
+            Console.Clear();
+            Console.WriteLine("Now we are entering the status of the book.");
+            Console.WriteLine("Press any key, when you're ready.");
+            Console.ReadKey();
+            do
+            {
+                Console.WriteLine("Is this book yours (Y/N) or borrowed?");
+                string answer = Console.ReadLine().ToLower();
+
+                if (string.IsNullOrEmpty(answer) || answer != "y" || answer != "n")
+                {
+                    Console.WriteLine("Please enter required data - 'y' or 'n'.");
+                }
+                else if (answer == "y")
+                {
+                    isItYours = true;
+                    Console.WriteLine("Have you lend it to someone? (Y/N)");
+                    var input = Console.ReadLine().ToLower();
+
+                    if (string.IsNullOrEmpty(input) || input != "y" || input != "n")
+                    {
+                        Console.WriteLine("Please enter required data - 'y' or 'n'.");
+                    }
+                    if (input == "y")
+                    {
+                        bookStatus.IsLended = isLended = true;
+                        bookStatus.IsItYours = true;
+                        Console.WriteLine("Write necessary information about it - e.g. who has it now.");
+                        bookStatus.LendedToInfo = lendedToInfo = Console.ReadLine();
+                        bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
+                    }
+                    else if (input == "n")
+                    {
+                        bookStatus.IsItYours = isItYours = true;
+                        bookStatus.IsLended = isLended = false;
+                        bookStatus.LendedToInfo = lendedToInfo = "";
+                        bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+                        input = Console.ReadLine().ToLower();
+                    }
+
+
+                }
+                else if (answer == "n")
+                {
+                    bookStatus.IsItYours = isItYours = false;
+                    bookStatus.IsLended = isLended = isLended = false;
+                    Console.WriteLine("Where did you get it from?");
+                    bookStatus.BorrowedFromInfo = bookStatus.BorrowedFromInfo = borrowedFromInfo = Console.ReadLine();
+                    bookStatus.LendedToInfo = lendedToInfo = "";
+                }
+                else
+                {
+                    Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
+                }
+            } while (isValid == false);
+
+            return bookStatus;
+        }
         internal void ShowStatus(BookStatus status)
         {
             if(status.IsItYours == true & status.IsLended == true)
@@ -308,8 +382,9 @@ namespace HomeLibrary.GUI.CnsoleInput
             Books.RemoveAll(b => b.Title.Contains(bookToRemove));
         }
 
-        public void AddLocation(Location newLocation)
+        public Location AddLocation()
         {
+            Location newLocation = new Location("", "", "");
             Console.Clear();
             Console.WriteLine("Now we are entering the book Location in your home library.");
             Console.WriteLine("Press any key, when you're ready.");
@@ -326,6 +401,7 @@ namespace HomeLibrary.GUI.CnsoleInput
 
             Console.WriteLine("Now name the room:");
             newLocation.Room = Console.ReadLine();
+            return newLocation;
         }
 
        public void DisplayAllBooks()

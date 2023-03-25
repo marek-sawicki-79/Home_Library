@@ -30,13 +30,12 @@ void GetBooks()
 
 while (true)
 {
-    Location location = new Location("", "", "");
-    BookStatus bookStatus = new BookStatus(false, false, "", "");
-    bool isLended;
-    //bool borrowedFrom;
-    bool isItYours;
-    string lendedToInfo;
-    string borrowedFromInfo;
+    
+    //BookStatus bookStatus = new BookStatus(false, false, "", "");
+    //bool isLended;
+    //bool isItYours;
+    //string lendedToInfo;
+    //string borrowedFromInfo;
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
 
     switch (userChoice)
@@ -68,64 +67,13 @@ while (true)
             int yourRating = library.RateYourBook();
             Console.WriteLine();
 
+            BookStatus bookStatus = library.AddBookStatus();
 
-            Console.Clear();
-            Console.WriteLine("Now we are entering the status of the book.");
-            Console.WriteLine("Press any key, when you're ready.");
-            Console.ReadKey();
+            Location location = library.AddLocation();
 
-            Console.WriteLine("Is this book yours (Y/N) or borrowed?");
-            string answer = Console.ReadLine().ToLower();
-
-
-
-            if (answer == "y")
-            {
-                isItYours = true;
-                Console.WriteLine("Have you lend it to someone? (Y/N)");
-                var input = Console.ReadLine().ToLower();
-                if (input == "y")
-                {
-                    bookStatus.IsLended = isLended = true;
-                    bookStatus.IsItYours = true;
-                    Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                    bookStatus.LendedToInfo = lendedToInfo = Console.ReadLine();
-                    bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
-                }
-                else if (input == "n")
-                {
-                    bookStatus.IsItYours = isItYours = true;
-                    bookStatus.IsLended = isLended = false;
-                    library.AddLocation(location);
-                    bookStatus.LendedToInfo = lendedToInfo = "";
-                    bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
-                }
-                else
-                {
-                    Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
-                    input = Console.ReadLine().ToLower();
-                                    }
-
-
-            }
-            else if(answer == "n")
-            {
-                bookStatus.IsItYours = isItYours = false;
-                bookStatus.IsLended = isLended = isLended = false;
-                Console.WriteLine("Where did you get it from?");
-                bookStatus.BorrowedFromInfo = bookStatus.BorrowedFromInfo = borrowedFromInfo = Console.ReadLine();
-                bookStatus.LendedToInfo = lendedToInfo = "";
-                library.AddLocation(location);
-            }
-            else
-            {
-                Console.WriteLine("Illegible answer. Is this book yours? \nPlease answer 'Y' for yes or 'N' for no.");
-            }
             id = id++;
 
             var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus);
-            //newBook.BookStatus = bookStatus;
-            //newBook.Location = location;
             library.AddBook(newBook);
             break;
 

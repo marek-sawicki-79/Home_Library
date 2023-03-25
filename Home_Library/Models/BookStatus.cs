@@ -10,8 +10,8 @@ namespace HomeLibrary.BusinessLogic.Models
     {
         public bool IsLended { get; set; }
         public bool IsItYours { get; set; }
-        public string LendedToInfo { get; set; }
-        public string BorrowedFromInfo { get; set; }
+        public string? LendedToInfo { get; set; }
+        public string? BorrowedFromInfo { get; set; }
 
         public BookStatus(bool isLended, bool isItYours, string lendedToInfo, string borrowedFromInfo)
         {
