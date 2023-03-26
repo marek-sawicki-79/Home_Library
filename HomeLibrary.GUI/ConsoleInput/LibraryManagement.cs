@@ -362,9 +362,6 @@ namespace HomeLibrary.GUI.CnsoleInput
 
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
-            Console.WriteLine("Press any key, when you're ready.");
-            Console.ReadKey();
-
             do
             {
                 Console.WriteLine("Is this book yours (Y/N) or borrowed?");
