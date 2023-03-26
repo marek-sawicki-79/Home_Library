@@ -354,24 +354,25 @@ namespace HomeLibrary.GUI.CnsoleInput
         public BookStatus AddBookStatus()
         {
             BookStatus bookStatus = new BookStatus(false, false, "", "");
-            bool isLended;
-            bool isItYours;
-            string lendedToInfo;
-            string borrowedFromInfo;
+            bool isLended = false;
+            bool isItYours = false;
+            string lendedToInfo = null;
+            string borrowedFromInfo = null;
             bool isValid = false;
-            bookStatus.LendedToInfo = null;
-            bookStatus.BorrowedFromInfo = null;
+            //bookStatus.LendedToInfo = null;
+            //bookStatus.BorrowedFromInfo = null;
 
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
             Console.WriteLine("Press any key, when you're ready.");
             Console.ReadKey();
+
             do
             {
                 Console.WriteLine("Is this book yours (Y/N) or borrowed?");
                 string answer = Console.ReadLine().ToLower();
 
-                if (string.IsNullOrEmpty(answer) /*|| answer != "y" && answer != "n"*/)
+                if (string.IsNullOrEmpty(answer))
                 {
                     Console.WriteLine("Please enter required data - 'y' or 'n'.");
                 }
@@ -395,32 +396,35 @@ namespace HomeLibrary.GUI.CnsoleInput
                     }
                     else if (input == "y")
                     {
-                        bookStatus.IsLended = isLended = true;
+                        bookStatus.IsLended = true;
                         bookStatus.IsItYours = true;
                         Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                        bookStatus.LendedToInfo = lendedToInfo = Console.ReadLine();
-                        bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
+                        lendedToInfo = Console.ReadLine();
+                        bookStatus.LendedToInfo = lendedToInfo;
+                        bookStatus.BorrowedFromInfo = borrowedFromInfo;
                         isValid = true;
                     }
                     else if (input == "n")
                     {
-                        bookStatus.IsItYours = isItYours = true;
-                        bookStatus.IsLended = isLended = false;
-                        bookStatus.LendedToInfo = lendedToInfo = "";
-                        bookStatus.BorrowedFromInfo = borrowedFromInfo = "";
+                        bookStatus.IsLended = false;
+                        bookStatus.IsItYours = true;
+                        bookStatus.IsLended = isLended;
+                        bookStatus.LendedToInfo = lendedToInfo;
+                        bookStatus.BorrowedFromInfo = borrowedFromInfo;
                         isValid = true;
                     }
                 }
                 else if (answer == "n")
                 {
-                    bookStatus.IsItYours = isItYours = false;
-                    bookStatus.IsLended = isLended = isLended = false;
+                    bookStatus.IsItYours = false;
+                    bookStatus.IsLended = isLended;
                     Console.WriteLine("Where did you get it from?");
-                    bookStatus.BorrowedFromInfo = bookStatus.BorrowedFromInfo = borrowedFromInfo = Console.ReadLine();
-                    bookStatus.LendedToInfo = lendedToInfo = "";
+                    borrowedFromInfo = Console.ReadLine();
+                    bookStatus.BorrowedFromInfo = borrowedFromInfo;
+                    bookStatus.LendedToInfo = lendedToInfo;
                     isValid = true;
                 }
-            } while (isValid == false);
+            } while (!isValid);
 
             return bookStatus;
         }
