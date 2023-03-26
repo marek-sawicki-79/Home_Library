@@ -359,9 +359,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             string lendedToInfo = null;
             string borrowedFromInfo = null;
             bool isValid = false;
-            //bookStatus.LendedToInfo = null;
-            //bookStatus.BorrowedFromInfo = null;
-
+            
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
             Console.WriteLine("Press any key, when you're ready.");
