@@ -359,7 +359,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             string lendedToInfo = null;
             string borrowedFromInfo = null;
             bool isValid = false;
-            
+
             Console.Clear();
             Console.WriteLine("Now we are entering the status of the book.");
             Console.WriteLine("Press any key, when you're ready.");
@@ -381,35 +381,43 @@ namespace HomeLibrary.GUI.CnsoleInput
                 else if (answer == "y")
                 {
                     isItYours = true;
-                    Console.WriteLine("Have you lend it to someone? (Y/N)");
-                    var input = Console.ReadLine().ToLower();
 
-                    if (string.IsNullOrEmpty(input))
+                    while (true)
                     {
-                        Console.WriteLine("Please enter required data - 'y' or 'n'.");
-                    }
-                    else if(input != "y" && input != "n")
-                    {
-                        Console.WriteLine("Enter 'y' or 'n'.");
-                    }
-                    else if (input == "y")
-                    {
-                        bookStatus.IsLended = true;
-                        bookStatus.IsItYours = true;
-                        Console.WriteLine("Write necessary information about it - e.g. who has it now.");
-                        lendedToInfo = Console.ReadLine();
-                        bookStatus.LendedToInfo = lendedToInfo;
-                        bookStatus.BorrowedFromInfo = borrowedFromInfo;
-                        isValid = true;
-                    }
-                    else if (input == "n")
-                    {
-                        bookStatus.IsLended = false;
-                        bookStatus.IsItYours = true;
-                        bookStatus.IsLended = isLended;
-                        bookStatus.LendedToInfo = lendedToInfo;
-                        bookStatus.BorrowedFromInfo = borrowedFromInfo;
-                        isValid = true;
+
+
+                        Console.WriteLine("Have you lend it to someone? (Y/N)");
+                        var input = Console.ReadLine().ToLower();
+
+                        if (string.IsNullOrEmpty(input))
+                        {
+                            Console.WriteLine("Please enter required data - 'y' or 'n'.");
+                        }
+                        else if (input != "y" && input != "n")
+                        {
+                            Console.WriteLine("Enter 'y' or 'n'.");
+                        }
+                        else if (input == "y")
+                        {
+                            bookStatus.IsLended = true;
+                            bookStatus.IsItYours = true;
+                            Console.WriteLine("Write necessary information about it - e.g. who has it now.");
+                            lendedToInfo = Console.ReadLine();
+                            bookStatus.LendedToInfo = lendedToInfo;
+                            bookStatus.BorrowedFromInfo = borrowedFromInfo;
+                            isValid = true;
+                            break;
+                        }
+                        else if (input == "n")
+                        {
+                            bookStatus.IsLended = false;
+                            bookStatus.IsItYours = true;
+                            bookStatus.IsLended = isLended;
+                            bookStatus.LendedToInfo = lendedToInfo;
+                            bookStatus.BorrowedFromInfo = borrowedFromInfo;
+                            isValid = true;
+                            break;
+                        }
                     }
                 }
                 else if (answer == "n")
