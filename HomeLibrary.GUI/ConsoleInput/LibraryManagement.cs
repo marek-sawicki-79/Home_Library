@@ -14,9 +14,13 @@ namespace HomeLibrary.GUI.CnsoleInput
             new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
                 "Sci-Fi novel", "I", "none", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
             new Book(1, "Eden", "Stanisław Lem", "Wydawnictwo Literackie Kraków-Wrocław",
-                "Sci-Fi novel", "IV", "Stabisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+                "Sci-Fi novel", "IV", "Stanisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
             new Book(2, "Bogowie, Honor i Ankh-Morpork", "Terry Pratchett", "Prószyński i S-ka",
-                "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null))
+                "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+            new Book(3, "Powrót z gwiazd", "Stanisław Lem", "Wydawnictwo Literackie",
+                "Sci-Fi", "I", "Stanisław Lem DZIEŁA", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(true, true, "amator pacynek(Macierewicza)", null)),
+            new Book(4, "Królestwo", "Jo Nesbo", "Wydawnictwo Dolnośląskie",
+                "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "))
         };
         public List<Book> GetBooks()
         {
@@ -44,6 +48,15 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
 
         public void SearchBookByTitle(string title)
+        {
+            var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
+            foreach (var book in books)
+            {
+                ShowBookDetails(book);
+            }
+
+        }
+        public void SearchLent(string title)
         {
             var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
             foreach (var book in books)
