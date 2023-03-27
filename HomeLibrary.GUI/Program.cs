@@ -15,6 +15,7 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\n4. show all available information about a specific book," +
                   "\n5. find books by genre in your collection," +
                   "\n6. if you want to see the list of book genres in your collection," +
+                  "\n7. show me books that are lent" +
                   "\n'X' to exit application.");
 Console.WriteLine();
 var userChoice = Console.ReadLine();
@@ -24,19 +25,11 @@ void GetBooks()
 {
     List<Book> Books = library.GetBooks();
 }
-//var newBook = new Book();
-//var bookStatus = new BookStatus();
-//var location = new Location();
 
 while (true)
 {
-    
-    //BookStatus bookStatus = new BookStatus(false, false, "", "");
-    //bool isLended;
-    //bool isItYours;
-    //string lendedToInfo;
-    //string borrowedFromInfo;
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
+    List<Book> myBooks = library.GetBooks();
 
     switch (userChoice)
     {
@@ -107,6 +100,11 @@ while (true)
         case "6":
             Console.WriteLine("Available book genres:");
             library.SearchGenres();
+            break;
+
+        case "7":
+            Console.WriteLine("Lent books:");
+            library.SearchLent(myBooks);
             break;
 
         case "x":

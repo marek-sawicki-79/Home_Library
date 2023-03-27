@@ -56,10 +56,19 @@ namespace HomeLibrary.GUI.CnsoleInput
             }
 
         }
-        public void SearchLent(string title)
+        public void SearchLent(List<Book> bookList)
         {
-            var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
-            foreach (var book in books)
+            var lentBooks = Books.Where(x => x.BookStatus.IsLended == true);
+            foreach (var book in lentBooks)
+            {
+                ShowBookDetails(book);
+            }
+
+        }
+        public void SearchBorrowed(Book books)
+        {
+            var borrowedBooks = Books.Where(x => x.BookStatus.IsItYours == false);
+            foreach (var book in borrowedBooks)
             {
                 ShowBookDetails(book);
             }
