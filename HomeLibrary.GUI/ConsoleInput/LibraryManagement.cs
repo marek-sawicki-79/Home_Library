@@ -65,7 +65,7 @@ namespace HomeLibrary.GUI.CnsoleInput
             }
 
         }
-        public void SearchBorrowed(Book books)
+        public void SearchBorrowed(List<Book> bookList)
         {
             var borrowedBooks = Books.Where(x => x.BookStatus.IsItYours == false);
             foreach (var book in borrowedBooks)

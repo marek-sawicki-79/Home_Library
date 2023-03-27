@@ -15,7 +15,8 @@ Console.WriteLine("Welcome to Home Library application\n" +
                   "\n4. show all available information about a specific book," +
                   "\n5. find books by genre in your collection," +
                   "\n6. if you want to see the list of book genres in your collection," +
-                  "\n7. show me books that are lent" +
+                  "\n7. show me books that are lent," +
+                  "\n8. show me borrowed books," +
                   "\n'X' to exit application.");
 Console.WriteLine();
 var userChoice = Console.ReadLine();
@@ -105,6 +106,11 @@ while (true)
         case "7":
             Console.WriteLine("Lent books:");
             library.SearchLent(myBooks);
+            break;
+
+        case "8":
+            Console.WriteLine("Borrowed books:");
+            library.SearchBorrowed(myBooks);
             break;
 
         case "x":
