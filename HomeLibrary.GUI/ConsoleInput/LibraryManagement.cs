@@ -67,7 +67,38 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         internal int AddNumberOfPages()
         {
-            return -500;
+            bool isValid = false;
+            int numberOfPages = 0;
+            Console.WriteLine("Enter number of pages:");
+            do
+            {
+                string input = Console.ReadLine();
+                bool isInt = int.TryParse(input, out int result);
+                if (string.IsNullOrEmpty(input))
+                {
+                    BadDataMessage();
+                }
+                else if (isInt == false)
+                {
+                    Console.WriteLine("Please enter number f pages using numerals.");
+                }
+                else if (isInt && 21450 < result)
+                {
+                    Console.WriteLine($"Your rating for this book >{result}< is off the charts."+
+                        $"\nCurrently recorded longest book has 21450 pages." +
+                        $"\nDo not exceed this length, please.");
+                }
+                else if (isInt && result < 10)
+                {
+                    Console.WriteLine("Seriously? less than 10 pages? It's more a pamflet than a book. I won't store it. It's beneath me.");
+                }
+                else
+                {
+                    numberOfPages = result;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return numberOfPages;
         }
 
         internal string AddBookSummary()
