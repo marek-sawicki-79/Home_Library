@@ -36,8 +36,62 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         internal DateTime AddBookAcquisitionDate()
         {
+            bool yearIsValid = false;
+            bool monthIsValid = false;
+            bool dayIsValid = false;
+            DateTime dateOfAcquisition = default;
+            Console.WriteLine("Did you get it today? (y/n)");
+            string answer = Console.ReadLine().ToLower();
 
-            return new DateTime(1981, 10, 19);
+            if (string.IsNullOrEmpty(answer))
+            {
+                BadDataMessage();
+                Console.WriteLine("'y' or 'n'.");
+            }
+            else if (answer != "y" && answer != "n")
+            {
+                Console.WriteLine("Enter 'y' or 'n'.");
+            }
+            else if (answer == "y")
+            {
+                dateOfAcquisition = DateTime.Now;
+            }
+            else if (answer == "n")
+            {
+                do
+                {
+                    Console.WriteLine("Type in the year");
+                    string input = Console.ReadLine();
+                    DateTime oldestYear = default;
+                    oldestYear.Year = 1800;
+                    if (string.IsNullOrEmpty(input))
+                    {
+                        BadDataMessage();
+                    }
+                    else if (isInt == false)
+                    {
+                        Console.WriteLine("Please enter year using numerals.");
+                    }
+                    else if (isInt && 1800 < result && result > DateTime.Now)
+                    {
+                        Console.WriteLine($"Your rating for this book >{result}< is off the charts." +
+                            $"\nCurrently recorded longest book has 21450 pages." +
+                            $"\nDo not exceed this length, please.");
+                    }
+                    else if (isInt && result < 10)
+                    {
+                        Console.WriteLine("Seriously? less than 10 pages? It's more a pamflet than a book. I won't store it. It's beneath me.");
+                    }
+                    else
+                    {
+                        numberOfPages = result;
+                        isValid = true;
+                    }
+                } while (yearIsValid == false);
+            }
+
+            return numberOfPages;
+            //return new DateTime(1981, 10, 19);
         }
 
         internal string AddPublicationLanguage()
