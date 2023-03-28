@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,62 +37,45 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         internal DateTime AddBookAcquisitionDate()
         {
-            bool yearIsValid = false;
-            bool monthIsValid = false;
-            bool dayIsValid = false;
+            bool dateIsValid = false;
             DateTime dateOfAcquisition = default;
             Console.WriteLine("Did you get it today? (y/n)");
             string answer = Console.ReadLine().ToLower();
+            DateTime oldestYear = new DateTime(1700, 1, 1);
+            do
 
-            if (string.IsNullOrEmpty(answer))
-            {
-                BadDataMessage();
-                Console.WriteLine("'y' or 'n'.");
-            }
-            else if (answer != "y" && answer != "n")
-            {
-                Console.WriteLine("Enter 'y' or 'n'.");
-            }
-            else if (answer == "y")
-            {
-                dateOfAcquisition = DateTime.Now;
-            }
-            else if (answer == "n")
-            {
-                do
                 {
-                    Console.WriteLine("Type in the year");
+                    if (string.IsNullOrEmpty(answer))
+                {
+                    BadDataMessage();
+                    Console.WriteLine("'y' or 'n'.");
+                }
+                else if (answer != "y" && answer != "n")
+                {
+                    Console.WriteLine("Enter 'y' or 'n'.");
+                }
+                else if (answer == "y")
+                {
+                    dateOfAcquisition = DateTime.Now;
+                    dateIsValid = true;
+                }
+                else if (answer == "n")
+                {
+                    Console.WriteLine("Please enter the date (yyyy-MM-dd)");
                     string input = Console.ReadLine();
-                    DateTime oldestYear = default;
-                    oldestYear.Year = 1800;
-                    if (string.IsNullOrEmpty(input))
+                    DateTime inputDate;
+                    if(DateTime.TryParseExact(input, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out inputDate))
                     {
-                        BadDataMessage();
-                    }
-                    else if (isInt == false)
-                    {
-                        Console.WriteLine("Please enter year using numerals.");
-                    }
-                    else if (isInt && 1800 < result && result > DateTime.Now)
-                    {
-                        Console.WriteLine($"Your rating for this book >{result}< is off the charts." +
-                            $"\nCurrently recorded longest book has 21450 pages." +
-                            $"\nDo not exceed this length, please.");
-                    }
-                    else if (isInt && result < 10)
-                    {
-                        Console.WriteLine("Seriously? less than 10 pages? It's more a pamflet than a book. I won't store it. It's beneath me.");
+                        dateOfAcquisition = inputDate;
+                        dateIsValid = true;
                     }
                     else
                     {
-                        numberOfPages = result;
-                        isValid = true;
+                        Console.WriteLine("Invalid input. Please enter a valid date in the format yyyy-MM-dd.");
                     }
-                } while (yearIsValid == false);
-            }
-
-            return numberOfPages;
-            //return new DateTime(1981, 10, 19);
+                }
+            } while (dateIsValid == false);
+            return dateOfAcquisition;
         }
 
         internal string AddPublicationLanguage()
