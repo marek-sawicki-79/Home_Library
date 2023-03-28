@@ -190,9 +190,14 @@ namespace HomeLibrary.GUI.CnsoleInput
                 {
                     BadDataMessage();
                 }
-                else if (input.Length != 17)
+                else if (input.Length != 17 && input.Length != 13)
                 {
                     Console.WriteLine("Enter only numbers and dashes only.");
+                }
+                else if(input.Length == 13)
+                {
+                    isbnNumber = ($"ISBN 978-{input}");
+                    isValid = true;
                 }
                 else
                 {

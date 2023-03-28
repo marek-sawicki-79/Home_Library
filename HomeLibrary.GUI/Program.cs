@@ -70,7 +70,7 @@ while (true)
 
             id = id++;
 
-            var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus);
+            var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages, publicationLanguage);
             library.AddBook(newBook);
             break;
 
