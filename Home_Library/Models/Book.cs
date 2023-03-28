@@ -18,6 +18,11 @@ namespace HomeLibrary.BusinessLogic.Models
         public string SeriesTitle { get; set; }
         public int YearOfPublish { get; set; }
         public int YourRating { get; set; }
+        public string IsbnNumber { get; set; }
+        public string? BookSummary { get; set; }
+        public DateTime CollectionAddDate  { get; set; }
+        public int NumberOfPages { get; set; }
+        public string PublicationLanguage { get; set; }
 
 
         public Location Location { get; set; }
@@ -25,7 +30,8 @@ namespace HomeLibrary.BusinessLogic.Models
 
         public Book(int id, string title, string author, string publishingHouse, string genre,
             string edition, string seriesTitle, int yearOfPublish, int yourRating,
-            Location location, BookStatus bookStatus)
+            Location location, BookStatus bookStatus, string isbnNumber, string bookSummary, DateTime collectionAddDate,
+            int numberOfPages, string publicationLanguage)
         {
             Id = id;
             Title = title;
@@ -38,6 +44,11 @@ namespace HomeLibrary.BusinessLogic.Models
             YourRating = yourRating;
             Location = location;
             BookStatus = bookStatus;
+            IsbnNumber = isbnNumber;
+            BookSummary = bookSummary;
+            CollectionAddDate =collectionAddDate;
+            NumberOfPages = numberOfPages;
+            PublicationLanguage = publicationLanguage;
         }
     }
 }
