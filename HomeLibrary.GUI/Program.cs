@@ -147,6 +147,8 @@ while (true)
                   "\n4. show all available information about a specific book," +
                   "\n5. find books by genre in your collection," +
                   "\n6. if you want to see the list of book genres in your collection," +
+                  "\n7. show me books that are lent," +
+                  "\n8. show me borrowed books," +
                   "\n'X' to exit application.");
     Console.WriteLine();
     userChoice = Console.ReadLine();

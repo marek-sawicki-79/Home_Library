@@ -20,7 +20,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 "Sci-Fi novel", "IV", "Stanisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null),
                 "ISBN 978-83-08-01292-2", "W wyniku błędów w obliczeniach rakieta z grupą kosmonautów przymusowo ląduje na planecie Eden. " +
                 "Ludzie rozpoczynają naprawę wbitego w grunt statku, a także badanie planety, która " +
-                "okazuje się zamieszkana przez istoty rozumne. Podczas poznawania nowego środowiska kosmonauci odkrywają niezrozumiałe z ziemskiego punktu widzenia rzeczy i zjawiska", 
+                "okazuje się zamieszkana przez istoty rozumne. Podczas poznawania nowego środowiska kosmonauci odkrywają niezrozumiałe z ziemskiego punktu widzenia rzeczy i zjawiska",
                 new DateTime(1979, 8,23), 301, "PL"),
             new Book(2, "Bogowie, Honor i Ankh-Morpork", "Terry Pratchett", "Prószyński i S-ka",
                 "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null),
@@ -68,12 +68,15 @@ namespace HomeLibrary.GUI.CnsoleInput
         internal void ShowBookDetails(Book book)
         {
 
-            Console.WriteLine($"{book.Title}\nwritten by {book.Author}\n it is a {book.Genre}" +
+            Console.WriteLine($"The book title is {book.Title}\nwritten by {book.Author}\n it is a {book.Genre}" +
                               $"\n published by {book.PublishingHouse}" +
                               $"\n edition no. {book.Edition}." +
-                              $"\nIt was published in {book.YearOfPublish}. It is a part " +
-                              $"of a {book.SeriesTitle} series." +
+                              $"\nIt was published in {book.YearOfPublish} in {book.PublicationLanguage} language, and consists of {book.NumberOfPages} pages"+
+                              $"\nIt's ISBN number is: {book.IsbnNumber};" +
+                              $"\nIt was added to your collection on {book.CollectionAddDate}" +
+                              $"It is a part  of a {book.SeriesTitle} series." +
                               $"\n your rate is {book.YourRating} out of 5." +
+                              $"\nHere is a short summary of this book: \n\t{book.BookSummary}" +
                               $"\n\nthe book is located in {book.Location.Building} " +
                               $"on {book.Location.Floor} in {book.Location.Room} room.");
             ShowStatus(book.BookStatus);
