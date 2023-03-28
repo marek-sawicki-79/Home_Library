@@ -55,10 +55,22 @@ while (true)
             string edition = library.RomanNumeralsInput();
             Console.WriteLine();
 
+            int numberOfPages = library.AddNumberOfPages();
+            Console.WriteLine();
+
             string seriesTitle = library.SeriesTitleInput();
             Console.WriteLine();
 
             int yearOfPublish = library.YearOfPublishInput();
+            Console.WriteLine();
+
+            string publicationLanguage = library.AddPublicationLanguage();
+            Console.WriteLine();
+
+            DateTime collectionAddDate = library.AddBookAcquisitionDate();
+            Console.WriteLine();
+
+            string bookSummary = library.AddBookSummary();
             Console.WriteLine();
 
             int yourRating = library.RateYourBook();
@@ -70,7 +82,9 @@ while (true)
 
             id = id++;
 
-            var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish, yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages, publicationLanguage);
+            var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish,
+                yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages,
+                publicationLanguage);
             library.AddBook(newBook);
             break;
 

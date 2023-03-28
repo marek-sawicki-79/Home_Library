@@ -33,6 +33,28 @@ namespace HomeLibrary.GUI.CnsoleInput
                 "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "),
                 "ISBN 978-83-271-6008-9", "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa", new DateTime(2), 746, "PL")
         };
+
+        internal DateTime AddBookAcquisitionDate()
+        {
+
+            return new DateTime(1981, 10, 19);
+        }
+
+        internal string AddPublicationLanguage()
+        {
+            return "dummy string";
+        }
+
+        internal int AddNumberOfPages()
+        {
+            return -500;
+        }
+
+        internal string AddBookSummary()
+        {
+            return "ballada o bladym żołnierzu";
+        }
+
         public List<Book> GetBooks()
         {
             return Books;
