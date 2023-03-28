@@ -52,7 +52,27 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         internal string AddBookSummary()
         {
-            return "ballada o bladym żołnierzu";
+            bool isValid = false;
+            var bookSummary = "";
+            Console.WriteLine("Add short book summary:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    BadDataMessage();
+                }
+                else if (input.Length >= 1000)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 1000 characters.");
+                }
+                else
+                {
+                    bookSummary = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return bookSummary;
         }
 
         public List<Book> GetBooks()
@@ -73,12 +93,12 @@ namespace HomeLibrary.GUI.CnsoleInput
                               $"\n edition no. {book.Edition}." +
                               $"\nIt was published in {book.YearOfPublish} in {book.PublicationLanguage} language, and consists of {book.NumberOfPages} pages"+
                               $"\nIt's ISBN number is: {book.IsbnNumber};" +
-                              $"\nIt was added to your collection on {book.CollectionAddDate}" +
-                              $"It is a part  of a {book.SeriesTitle} series." +
+                              $"\nIt was added to your collection on {book.CollectionAddDate}." +
+                              $"\nIt is a part  of a {book.SeriesTitle} series." +
                               $"\n your rate is {book.YourRating} out of 5." +
                               $"\nHere is a short summary of this book: \n\t{book.BookSummary}" +
                               $"\n\nthe book is located in {book.Location.Building} " +
-                              $"on {book.Location.Floor} in {book.Location.Room} room.");
+                              $"\non {book.Location.Floor} in {book.Location.Room} room.");
             ShowStatus(book.BookStatus);
             Console.WriteLine();
         }
