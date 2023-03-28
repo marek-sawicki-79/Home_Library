@@ -42,7 +42,27 @@ namespace HomeLibrary.GUI.CnsoleInput
 
         internal string AddPublicationLanguage()
         {
-            return "dummy string";
+            bool isValid = false;
+            string publicationLanguage = null;
+            Console.WriteLine("What language it is written in?");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    BadDataMessage();
+                }
+                else if (input.Length >= 20)
+                {
+                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 20 characters.");
+                }
+                else
+                {
+                    publicationLanguage = input;
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return publicationLanguage;
         }
 
         internal int AddNumberOfPages()
@@ -53,7 +73,7 @@ namespace HomeLibrary.GUI.CnsoleInput
         internal string AddBookSummary()
         {
             bool isValid = false;
-            var bookSummary = "";
+            string bookSummary = null;
             Console.WriteLine("Add short book summary:");
             do
             {
