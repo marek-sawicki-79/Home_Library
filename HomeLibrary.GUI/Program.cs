@@ -46,6 +46,9 @@ while (true)
             string publishingHouse = library.EnterPublishingHouse();
             Console.WriteLine();
 
+            string isbnNumber = library.IsbnNumberAdd();
+            Console.WriteLine();
+
             string genre = library.EnterBookGenre();
             Console.WriteLine();
 

@@ -12,15 +12,26 @@ namespace HomeLibrary.GUI.CnsoleInput
         public static List<Book> Books { get; set; } = new List<Book>()
         {
             new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
-                "Sci-Fi novel", "I", "none", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+                "Sci-Fi novel", "I", "none", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null),
+                "ISBN 978-83-7469-032-1", "Jest to relacja z pierwszej ręki, dotycząca przeżyć agenta uwięzionego głęboko w podziemnym kompleksie wojskowym Nowego Pentagonu," +
+                "gdzieś pod Górami Skalistymi. Świat i życie tajnego kompleksu rządowego przypominają kafkowskie wizje biurokracji i zagubienia w trybach maszyn urzędniczych.",
+                new DateTime(2019, 7, 11), 339, "PL"),
             new Book(1, "Eden", "Stanisław Lem", "Wydawnictwo Literackie Kraków-Wrocław",
-                "Sci-Fi novel", "IV", "Stanisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+                "Sci-Fi novel", "IV", "Stanisław Lem DZIEŁA", 1984, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null),
+                "ISBN 978-83-08-01292-2", "W wyniku błędów w obliczeniach rakieta z grupą kosmonautów przymusowo ląduje na planecie Eden. " +
+                "Ludzie rozpoczynają naprawę wbitego w grunt statku, a także badanie planety, która " +
+                "okazuje się zamieszkana przez istoty rozumne. Podczas poznawania nowego środowiska kosmonauci odkrywają niezrozumiałe z ziemskiego punktu widzenia rzeczy i zjawiska", 
+                new DateTime(1979, 8,23), 301, "PL"),
             new Book(2, "Bogowie, Honor i Ankh-Morpork", "Terry Pratchett", "Prószyński i S-ka",
-                "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null)),
+                "Fantasy - comedy - fantastyka - komedia", "I", "Świat Dysku", 2005, 5, new Location("house", "1st floor", "study"), new BookStatus(false, true, null, null),
+                "ISBN 978-83-7469032-1", "Książka opowiada o dwóch bogach, którzy przybywają do miasta Ankh-Morpork i rozpoczynają walkę o wpływy.", new DateTime(2005, 10, 5), 339, "PL"),
             new Book(3, "Powrót z gwiazd", "Stanisław Lem", "Wydawnictwo Literackie",
-                "Sci-Fi", "I", "Stanisław Lem DZIEŁA", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(true, true, "amator pacynek(Macierewicza)", null)),
+                "Sci-Fi", "I", "Stanisław Lem DZIEŁA", 2000, 5, new Location("house", "1st floor", "study"), new BookStatus(true, true, "amator pacynek(Macierewicza)", null),
+                 "ISBN 978-83-08-02932-9", "Historia pilota kosmicznego, który powraca na Ziemię po długiej misji i odkrywa, że świat uległ radykalnym zmianom.", new DateTime(2003, 10, 18),
+                 233, "PL"),
             new Book(4, "Królestwo", "Jo Nesbo", "Wydawnictwo Dolnośląskie",
-                "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "))
+                "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "),
+                "ISBN 978-83-271-6008-9", "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa", new DateTime(2), 746, "PL")
         };
         public List<Book> GetBooks()
         {
@@ -105,7 +116,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if(input.Length >= 100)
                 {
@@ -129,7 +140,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (input.Length >= 100)
                 {
@@ -153,7 +164,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (input.Length >= 100)
                 {
@@ -167,6 +178,30 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return publishingHouse;
         }
+        public string IsbnNumberAdd()
+        {
+            bool isValid = false;
+            string isbnNumber = null;
+            Console.WriteLine("Inter ISBN number:");
+            do
+            {
+                var input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    BadDataMessage();
+                }
+                else if (input.Length != 17)
+                {
+                    Console.WriteLine("Enter only numbers and dashes only.");
+                }
+                else
+                {
+                    isbnNumber = ($"ISBN {input}");
+                    isValid = true;
+                }
+            } while (isValid == false);
+            return isbnNumber;
+        }
         public string EnterBookGenre()
         {
             bool isValid = false;
@@ -177,7 +212,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (input.Length >= 100)
                 {
@@ -203,7 +238,7 @@ namespace HomeLibrary.GUI.CnsoleInput
 
                 if (string.IsNullOrEmpty(inputToCheck))
                 {
-                    Console.WriteLine("Invalid data");
+                    BadDataMessage();
                 }
                 else
                 {
@@ -235,7 +270,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (input.Length >= 100)
                 {
@@ -262,7 +297,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 bool isInt = int.TryParse(input, out int result);
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (isInt == false)
                 {
@@ -292,7 +327,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 bool isInt = int.TryParse(input, out int result);
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else if (isInt == false)
                 {
@@ -330,7 +365,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else
                 {
@@ -347,7 +382,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 var input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.WriteLine("Please enter required data");
+                    BadDataMessage();
                 }
                 else
                 {
@@ -391,7 +426,8 @@ namespace HomeLibrary.GUI.CnsoleInput
 
                 if (string.IsNullOrEmpty(answer))
                 {
-                    Console.WriteLine("Please enter required data - 'y' or 'n'.");
+                    BadDataMessage();
+                    Console.WriteLine("'y' or 'n'.");
                 }
                 else if (answer != "y" && answer != "n")
                 {
@@ -410,7 +446,8 @@ namespace HomeLibrary.GUI.CnsoleInput
 
                         if (string.IsNullOrEmpty(input))
                         {
-                            Console.WriteLine("Please enter required data - 'y' or 'n'.");
+                            BadDataMessage();
+                            Console.WriteLine("'y' or 'n'.");
                         }
                         else if (input != "y" && input != "n")
                         {
@@ -467,6 +504,10 @@ namespace HomeLibrary.GUI.CnsoleInput
             {
                 Console.WriteLine($"This book is borrowed.\nHere is some information about it:\n{status.BorrowedFromInfo}");
             }
+        }
+        internal void BadDataMessage()
+        {
+            Console.WriteLine("Please enter required data");
         }
         public void RemoveBook(string bookToRemove)
         {
