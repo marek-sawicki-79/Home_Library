@@ -34,7 +34,6 @@ namespace HomeLibrary.GUI.CnsoleInput
                 "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "),
                 "ISBN 978-83-271-6008-9", "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa", new DateTime(2), 746, "PL")
         };
-
         internal DateTime AddBookAcquisitionDate()
         {
             bool dateIsValid = false;
@@ -77,7 +76,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (dateIsValid == false);
             return dateOfAcquisition;
         }
-
         internal string AddPublicationLanguage()
         {
             bool isValid = false;
@@ -102,7 +100,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return publicationLanguage;
         }
-
         internal int AddNumberOfPages()
         {
             bool isValid = false;
@@ -138,7 +135,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return numberOfPages;
         }
-
         internal string AddBookSummary()
         {
             bool isValid = false;
@@ -163,7 +159,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return bookSummary;
         }
-
         public List<Book> GetBooks()
         {
             return Books;
@@ -191,7 +186,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             ShowStatus(book.BookStatus);
             Console.WriteLine();
         }
-
         public void SearchBookByTitle(string title)
         {
             var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
@@ -454,7 +448,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             } while (isValid == false);
             return yearOfPublish;
         }
-
         public int RateYourBook()
         {
             bool isValid = false;

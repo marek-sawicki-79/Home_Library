@@ -88,8 +88,6 @@ while (true)
             library.AddBook(newBook);
             break;
 
-
-
         case "2":
             Console.Clear();
             library.DisplayAllBooks();
