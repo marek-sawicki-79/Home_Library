@@ -31,6 +31,7 @@ var library = new LibraryManagement();
 
 while (true)
 {
+    List<Book> myBooks = new List<Book>();
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
     string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
     if (File.Exists(filePath))
@@ -39,7 +40,7 @@ while (true)
     }
     else
     {
-        List<Book> myBooks = library.GetBooks();
+        myBooks = library.GetBooks();
     }
 
 
