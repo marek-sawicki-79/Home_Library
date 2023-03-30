@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IKvX1PXqo7YZUMP0vVzpNp/zTlTEVLMPHlsrHZGV50bd6DKns8UeXwpE+mFfJypmwIlrVtGIf3ZNcxh2nSo5nQ==",
+  "dgSpecHash": "EyITszC77k2Whjj+r0EsakL1bIZ6MBujSE55290P+5Kwe2N/6axSfM68s8TDX2cbwj7YfZxztUwldvVHgiRBow==",
   "success": true,
   "projectFilePath": "C:\\Repozytoria\\My projects\\HomeLibrary\\HomeLibrary.GUI\\HomeLibrary.GUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maras\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
