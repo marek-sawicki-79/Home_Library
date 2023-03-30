@@ -1,0 +1,132 @@
+[
+  {
+    "Title": "Pamiętnik znaleziony w wannie",
+    "Author": "Stanisław Lem",
+    "PublishingHouse": "Wydawnictwo Literackie",
+    "Genre": "Sci-Fi novel",
+    "Edition": "I",
+    "SeriesTitle": "none",
+    "YearOfPublish": 2000,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-7469-032-1",
+    "BookSummary": "Jest to relacja z pierwszej ręki, dotycząca przeżyć agenta uwięzionego głęboko w podziemnym kompleksie wojskowym Nowego Pentagonu,gdzieś pod Górami Skalistymi. Świat i życie tajnego kompleksu rządowego przypominają kafkowskie wizje biurokracji i zagubienia w trybach maszyn urzędniczych.",
+    "CollectionAddDate": "2019-07-11T00:00:00",
+    "NumberOfPages": 339,
+    "PublicationLanguage": "PL",
+    "Location": {
+      "Building": "house",
+      "Floor": "1st floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "Eden",
+    "Author": "Stanisław Lem",
+    "PublishingHouse": "Wydawnictwo Literackie Kraków-Wrocław",
+    "Genre": "Sci-Fi novel",
+    "Edition": "IV",
+    "SeriesTitle": "Stanisław Lem DZIEŁA",
+    "YearOfPublish": 1984,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-08-01292-2",
+    "BookSummary": "W wyniku błędów w obliczeniach rakieta z grupą kosmonautów przymusowo ląduje na planecie Eden. Ludzie rozpoczynają naprawę wbitego w grunt statku, a także badanie planety, która okazuje się zamieszkana przez istoty rozumne. Podczas poznawania nowego środowiska kosmonauci odkrywają niezrozumiałe z ziemskiego punktu widzenia rzeczy i zjawiska",
+    "CollectionAddDate": "1979-08-23T00:00:00",
+    "NumberOfPages": 301,
+    "PublicationLanguage": "PL",
+    "Location": {
+      "Building": "house",
+      "Floor": "1st floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "Bogowie, Honor i Ankh-Morpork",
+    "Author": "Terry Pratchett",
+    "PublishingHouse": "Prószyński i S-ka",
+    "Genre": "Fantasy - comedy - fantastyka - komedia",
+    "Edition": "I",
+    "SeriesTitle": "Świat Dysku",
+    "YearOfPublish": 2005,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-7469032-1",
+    "BookSummary": "Książka opowiada o dwóch bogach, którzy przybywają do miasta Ankh-Morpork i rozpoczynają walkę o wpływy.",
+    "CollectionAddDate": "2005-10-05T00:00:00",
+    "NumberOfPages": 339,
+    "PublicationLanguage": "PL",
+    "Location": {
+      "Building": "house",
+      "Floor": "1st floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "Powrót z gwiazd",
+    "Author": "Stanisław Lem",
+    "PublishingHouse": "Wydawnictwo Literackie",
+    "Genre": "Sci-Fi",
+    "Edition": "I",
+    "SeriesTitle": "Stanisław Lem DZIEŁA",
+    "YearOfPublish": 2000,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-08-02932-9",
+    "BookSummary": "Historia pilota kosmicznego, który powraca na Ziemię po długiej misji i odkrywa, że świat uległ radykalnym zmianom.",
+    "CollectionAddDate": "2003-10-18T00:00:00",
+    "NumberOfPages": 233,
+    "PublicationLanguage": "PL",
+    "Location": {
+      "Building": "house",
+      "Floor": "1st floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": true,
+      "IsItYours": true,
+      "LendedToInfo": "amator pacynek(Macierewicza)",
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "Królestwo",
+    "Author": "Jo Nesbo",
+    "PublishingHouse": "Wydawnictwo Dolnośląskie",
+    "Genre": "Kryminał",
+    "Edition": "I",
+    "SeriesTitle": "Ślady zbrodni",
+    "YearOfPublish": 2020,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-271-6008-9",
+    "BookSummary": "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa",
+    "CollectionAddDate": "0001-01-01T00:00:00.0000002",
+    "NumberOfPages": 746,
+    "PublicationLanguage": "PL",
+    "Location": {
+      "Building": "house",
+      "Floor": "1st floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": false,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": "próba "
+    }
+  }
+]

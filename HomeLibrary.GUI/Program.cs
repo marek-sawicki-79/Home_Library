@@ -5,8 +5,8 @@ using HomeLibrary.GUI.CnsoleInput;
 using System.Threading;
 using System.IO;
 using Newtonsoft.Json;
-
-
+//using System.Text.Json;
+//using JsonSerializer = System.Text.Json.JsonSerializer;
 
 Console.Clear();
 Console.WriteLine("Welcome to Home Library application\n" +
@@ -37,10 +37,15 @@ while (true)
     if (File.Exists(filePath))
     {
         Console.WriteLine("You have already saved your library to a file.");
+        string jsonString = File.ReadAllText(filePath);
+        myBooks = JsonConvert.DeserializeObject<List<Book>>(jsonString);
     }
     else
     {
         myBooks = library.GetBooks();
+        string booksJson = JsonConvert.SerializeObject(myBooks, Formatting.Indented);
+        File.WriteAllText(filePath, booksJson);
+
     }
 
 
