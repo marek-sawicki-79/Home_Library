@@ -4,6 +4,7 @@ using HomeLibrary.BusinessLogic.Models;
 using HomeLibrary.GUI.CnsoleInput;
 using System.Threading;
 using System.IO;
+using Newtonsoft.Json;
 
 
 
@@ -23,15 +24,24 @@ Console.WriteLine();
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
 
-void GetBooks()
-{
-    List<Book> Books = library.GetBooks();
-}
+//void GetBooks()
+//{
+//    List<Book> Books = library.GetBooks();
+//}
 
 while (true)
 {
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
-    List<Book> myBooks = library.GetBooks();
+    string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
+    if (File.Exists(filePath))
+    {
+        Console.WriteLine("You have already saved your library to a file.");
+    }
+    else
+    {
+        List<Book> myBooks = library.GetBooks();
+    }
+
 
     switch (userChoice)
     {
