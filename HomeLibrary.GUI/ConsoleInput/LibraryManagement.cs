@@ -11,6 +11,7 @@ namespace HomeLibrary.GUI.CnsoleInput
 {
     internal class LibraryManagement
     {
+        string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
         public static List<Book> Books { get; set; } = new List<Book>()
         {
             new Book(0, "Pamiętnik znaleziony w wannie", "Stanisław Lem", "Wydawnictwo Literackie",
@@ -35,6 +36,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "),
                 "ISBN 978-83-271-6008-9", "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa", new DateTime(2), 746, "PL")
         };
+        
         internal DateTime AddBookAcquisitionDate()
         {
             bool dateIsValid = false;
