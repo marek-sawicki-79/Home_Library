@@ -33,18 +33,17 @@ var library = new LibraryManagement();
     List<Book> myBooks = new List<Book>();
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
     string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
-    if (File.Exists(filePath))
-    {
-        Console.WriteLine("You have already saved your library to a file.");
-        string jsonString = File.ReadAllText(filePath);
-        myBooks = JsonConvert.DeserializeObject<List<Book>>(jsonString);
-    }
-    else
+    if (!File.Exists(filePath))
     {
         myBooks = library.GetBooks();
         string booksJson = JsonConvert.SerializeObject(myBooks, Formatting.Indented);
         File.WriteAllText(filePath, booksJson);
-
+}
+    else
+    {
+            Console.WriteLine("You have already saved your library to a file.");
+            string jsonString = File.ReadAllText(filePath);
+            myBooks = JsonConvert.DeserializeObject<List<Book>>(jsonString);
     }
 
 while (true)
@@ -97,14 +96,15 @@ while (true)
 
             Location location = library.AddLocation();
 
-            id = id++;
+            id = myBooks.Count + 1;
 
             var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish,
                 yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages,
                 publicationLanguage);
             library.AddBook(newBook);
-
+            myBooks.Add(newBook);
             string updatedLibraryJson = JsonConvert.SerializeObject(myBooks, Formatting.Indented);
+            File.WriteAllText(filePath, updatedLibraryJson);
             break;
 
         case "2":

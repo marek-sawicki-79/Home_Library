@@ -128,5 +128,57 @@
       "LendedToInfo": null,
       "BorrowedFromInfo": "próba "
     }
+  },
+  {
+    "Title": "Rusz głową! Nauka programowania",
+    "Author": "Eric Freeman",
+    "PublishingHouse": "Helion S.A.",
+    "Genre": "It, Education",
+    "Edition": "I",
+    "SeriesTitle": "Rusz głową!",
+    "YearOfPublish": 2019,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-283-4697-0",
+    "BookSummary": "Programming for beginners. Basic coding course using python.",
+    "CollectionAddDate": "2022-02-11T00:00:00",
+    "NumberOfPages": 616,
+    "PublicationLanguage": "polish",
+    "Location": {
+      "Building": "House",
+      "Floor": "main floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "Rusz głową!",
+    "Author": "asdf",
+    "PublishingHouse": "zvcaswe",
+    "Genre": "ag",
+    "Edition": "I",
+    "SeriesTitle": "sdf",
+    "YearOfPublish": 2019,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-83-283-4697-0",
+    "BookSummary": "sahsjsyrjyrms",
+    "CollectionAddDate": "2023-03-31T23:06:46.5740836+02:00",
+    "NumberOfPages": 616,
+    "PublicationLanguage": "polish",
+    "Location": {
+      "Building": "swrg",
+      "Floor": "vc",
+      "Room": "ger"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
   }
 ]
