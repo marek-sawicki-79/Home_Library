@@ -29,8 +29,7 @@ var library = new LibraryManagement();
 //    List<Book> Books = library.GetBooks();
 //}
 
-while (true)
-{
+
     List<Book> myBooks = new List<Book>();
     int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
     string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
@@ -48,7 +47,8 @@ while (true)
 
     }
 
-
+while (true)
+{
     switch (userChoice)
     {
         case "1":
@@ -103,6 +103,8 @@ while (true)
                 yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages,
                 publicationLanguage);
             library.AddBook(newBook);
+
+            string updatedLibraryJson = JsonConvert.SerializeObject(myBooks, Formatting.Indented);
             break;
 
         case "2":
