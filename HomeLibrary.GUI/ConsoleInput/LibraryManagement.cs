@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HomeLibrary.BusinessLogic.Models;
+using Newtonsoft.Json;
 
 namespace HomeLibrary.GUI.CnsoleInput
 {
@@ -643,14 +644,27 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void RemoveBook(string bookToRemove)
         {
-            Books.RemoveAll(b => b.Title.Contains(bookToRemove));
+            Books.RemoveAll(b => b.Title.Equals(bookToRemove));
         }
         public void DisplayAllBooks()
         {
-            foreach (var book in Books)
+           
+            if (!File.Exists(filePath))
             {
-                Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+                foreach (var book in Books)
+                {
+                    Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+                }
             }
+            else
+            {
+                string jsonString = File.ReadAllText(filePath);
+                var myLibrary = JsonConvert.DeserializeObject<List<Book>>(jsonString);
+                foreach (var book in myLibrary)
+                {
+                    Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+                }
+            }            
         }
     }
 }

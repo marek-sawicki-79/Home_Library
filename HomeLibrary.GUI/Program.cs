@@ -24,24 +24,18 @@ Console.WriteLine();
 var userChoice = Console.ReadLine();
 var library = new LibraryManagement();
 
-//void GetBooks()
-//{
-//    List<Book> Books = library.GetBooks();
-//}
 
-
-    List<Book> myBooks = new List<Book>();
-    int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
-    string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
-    if (!File.Exists(filePath))
+List<Book> myBooks = new List<Book>();
+int id = library.GetBooks().Count; //need to re factor - books.count might be smaller than max id number
+string filePath = @"C:\Repozytoria\My projects\HomeLibrary\HomeLibrary.GUI\library.json";
+if (!File.Exists(filePath))
     {
         myBooks = library.GetBooks();
         string booksJson = JsonConvert.SerializeObject(myBooks, Formatting.Indented);
         File.WriteAllText(filePath, booksJson);
-}
-    else
+    }
+else
     {
-            Console.WriteLine("You have already saved your library to a file.");
             string jsonString = File.ReadAllText(filePath);
             myBooks = JsonConvert.DeserializeObject<List<Book>>(jsonString);
     }
