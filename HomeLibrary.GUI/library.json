@@ -154,5 +154,31 @@
       "LendedToInfo": null,
       "BorrowedFromInfo": null
     }
+  },
+  {
+    "Title": "Czysty kod. Podręcznik dobrego programisty",
+    "Author": "Robert C. Martin",
+    "PublishingHouse": "Helion",
+    "Genre": "IT, Education",
+    "Edition": "I",
+    "SeriesTitle": "None",
+    "YearOfPublish": 2014,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-283-0234-1",
+    "BookSummary": "How to write a good code & how torefactor a bad one into good.",
+    "CollectionAddDate": "2022-03-15T00:00:00",
+    "NumberOfPages": 424,
+    "PublicationLanguage": "polish",
+    "Location": {
+      "Building": "House",
+      "Floor": "Main floor",
+      "Room": "Study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
   }
 ]

@@ -168,7 +168,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void AddBook(Book newBook)
         {
-            Books.Add(newBook);
+            CheckJsonPresence();
+            libraryContent.Add(newBook);
 
             Console.WriteLine($"You have successfully added a new book to your home library!");
         }
@@ -191,7 +192,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void SearchBookByTitle(string title)
         {
-            var books = Books.Where(x => x.Title.ToLower().Contains(title.ToLower()));
+            CheckJsonPresence();
+            var books = libraryContent.Where(x => x.Title.ToLower().Contains(title.ToLower()));
             foreach (var book in books)
             {
                 ShowBookDetails(book);
@@ -200,7 +202,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void SearchLent(List<Book> bookList)
         {
-            var lentBooks = Books.Where(x => x.BookStatus.IsLended == true);
+            CheckJsonPresence();
+            var lentBooks = libraryContent.Where(x => x.BookStatus.IsLended == true);
             foreach (var book in lentBooks)
             {
                 ShowBookDetails(book);
@@ -209,7 +212,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void SearchBorrowed(List<Book> bookList)
         {
-            var borrowedBooks = Books.Where(x => x.BookStatus.IsItYours == false);
+            CheckJsonPresence();
+            var borrowedBooks = libraryContent.Where(x => x.BookStatus.IsItYours == false);
             foreach (var book in borrowedBooks)
             {
                 ShowBookDetails(book);
@@ -218,7 +222,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void SearchBooksByGenre(string genre)
         {
-            var books = Books.Where(g => g.Genre.ToLower().Contains(genre.ToLower())).ToList();
+            CheckJsonPresence();
+            var books = libraryContent.Where(g => g.Genre.ToLower().Contains(genre.ToLower())).ToList();
 
             foreach (var book in books)
             {
@@ -232,7 +237,8 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void SearchGenres()
         {
-            foreach (var book in Books)
+            CheckJsonPresence();
+            foreach (var book in libraryContent)
             {
                 Console.WriteLine($"\t{book.Genre}");
             }
