@@ -36,7 +36,7 @@ namespace HomeLibrary.GUI.CnsoleInput
                 "Kryminał", "I", "Ślady zbrodni", 2020, 5, new Location("house", "1st floor", "study"), new BookStatus(false, false,  null, "próba "),
                 "ISBN 978-83-271-6008-9", "Detektyw Harry Hole powraca do Oslo, by pomóc swojemu pasierbowi w rozwikłaniu sprawy zabójstwa", new DateTime(2), 746, "PL")
         };
-        
+        public List<Book> libraryContent = new List<Book>();
         internal DateTime AddBookAcquisitionDate()
         {
             bool dateIsValid = false;
@@ -650,23 +650,40 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void DisplayAllBooks()
         {
-           
+            CheckJsonPresence();
+            foreach (var book in libraryContent)
+            {
+                Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+            }
+            //if (!File.Exists(filePath))
+            //{
+            //    foreach (var book in Books)
+            //    {
+            //        Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+            //    }
+            //}
+            //else
+            //{
+            //    string jsonString = File.ReadAllText(filePath);
+            //    var myLibrary = JsonConvert.DeserializeObject<List<Book>>(jsonString);
+            //    foreach (var book in myLibrary)
+            //    {
+            //        Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
+            //    }
+            //}            
+        }
+        internal void CheckJsonPresence()
+        {
             if (!File.Exists(filePath))
             {
-                foreach (var book in Books)
-                {
-                    Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
-                }
+                libraryContent = Books;
             }
             else
             {
                 string jsonString = File.ReadAllText(filePath);
-                var myLibrary = JsonConvert.DeserializeObject<List<Book>>(jsonString);
-                foreach (var book in myLibrary)
-                {
-                    Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
-                }
-            }            
+                libraryContent = JsonConvert.DeserializeObject<List<Book>>(jsonString);
+            }
         }
     }
+    
 }
