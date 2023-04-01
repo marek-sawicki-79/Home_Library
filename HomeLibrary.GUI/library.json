@@ -154,31 +154,5 @@
       "LendedToInfo": null,
       "BorrowedFromInfo": null
     }
-  },
-  {
-    "Title": "Rusz głową!",
-    "Author": "asdf",
-    "PublishingHouse": "zvcaswe",
-    "Genre": "ag",
-    "Edition": "I",
-    "SeriesTitle": "sdf",
-    "YearOfPublish": 2019,
-    "YourRating": 1,
-    "IsbnNumber": "ISBN 978-83-283-4697-0",
-    "BookSummary": "sahsjsyrjyrms",
-    "CollectionAddDate": "2023-03-31T23:06:46.5740836+02:00",
-    "NumberOfPages": 616,
-    "PublicationLanguage": "polish",
-    "Location": {
-      "Building": "swrg",
-      "Floor": "vc",
-      "Room": "ger"
-    },
-    "BookStatus": {
-      "IsLended": false,
-      "IsItYours": true,
-      "LendedToInfo": null,
-      "BorrowedFromInfo": null
-    }
   }
 ]

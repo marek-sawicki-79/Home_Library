@@ -646,7 +646,9 @@ namespace HomeLibrary.GUI.CnsoleInput
         }
         public void RemoveBook(string bookToRemove)
         {
-            Books.RemoveAll(b => b.Title.Equals(bookToRemove));
+            CheckJsonPresence();
+            libraryContent.RemoveAll(b => b.Title.Equals(bookToRemove));
+            SerializeLibrary();
         }
         public void DisplayAllBooks()
         {
@@ -655,22 +657,6 @@ namespace HomeLibrary.GUI.CnsoleInput
             {
                 Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
             }
-            //if (!File.Exists(filePath))
-            //{
-            //    foreach (var book in Books)
-            //    {
-            //        Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
-            //    }
-            //}
-            //else
-            //{
-            //    string jsonString = File.ReadAllText(filePath);
-            //    var myLibrary = JsonConvert.DeserializeObject<List<Book>>(jsonString);
-            //    foreach (var book in myLibrary)
-            //    {
-            //        Console.WriteLine($"{book.Title}, by {book.Author}, published by {book.PublishingHouse} in {book.YearOfPublish}\t edition no. {book.Edition}.");
-            //    }
-            //}            
         }
         internal void CheckJsonPresence()
         {
@@ -684,6 +670,10 @@ namespace HomeLibrary.GUI.CnsoleInput
                 libraryContent = JsonConvert.DeserializeObject<List<Book>>(jsonString);
             }
         }
+        internal void SerializeLibrary()
+        {
+            string updatedLibraryJson = JsonConvert.SerializeObject(libraryContent, Formatting.Indented);
+            File.WriteAllText(filePath, updatedLibraryJson);
+        }
     }
-    
 }
