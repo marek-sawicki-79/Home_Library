@@ -180,5 +180,57 @@
       "LendedToInfo": null,
       "BorrowedFromInfo": null
     }
+  },
+  {
+    "Title": "dummy with no series",
+    "Author": "ads",
+    "PublishingHouse": "efrwq",
+    "Genre": "sfd",
+    "Edition": "X",
+    "SeriesTitle": null,
+    "YearOfPublish": 2002,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-789-789-789-7",
+    "BookSummary": "dfjhj hsfghsdf",
+    "CollectionAddDate": "2023-04-02T21:01:55.441879+02:00",
+    "NumberOfPages": 23,
+    "PublicationLanguage": "pl",
+    "Location": {
+      "Building": "h",
+      "Floor": "sadsf",
+      "Room": "yht"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "Title": "dummy with series",
+    "Author": "werf",
+    "PublishingHouse": "wetr",
+    "Genre": "awg",
+    "Edition": "V",
+    "SeriesTitle": "sedfrghdfghj",
+    "YearOfPublish": 2002,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-456-456-456-4",
+    "BookSummary": "sfgbsfdghs",
+    "CollectionAddDate": "2023-04-02T21:09:32.0647735+02:00",
+    "NumberOfPages": 321,
+    "PublicationLanguage": "dfgh",
+    "Location": {
+      "Building": "asdfg",
+      "Floor": "asdrgr",
+      "Room": "adsfgdf"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
   }
 ]

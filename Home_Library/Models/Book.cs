@@ -15,7 +15,7 @@ namespace HomeLibrary.BusinessLogic.Models
         public string PublishingHouse { get; set; }
         public string Genre { get; set; }
         public string Edition { get; set; }
-        public string SeriesTitle { get; set; }
+        public string? SeriesTitle { get; set; }
         public int YearOfPublish { get; set; }
         public int YourRating { get; set; }
         public string IsbnNumber { get; set; }

@@ -406,21 +406,45 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
             bool isValid = false;
             var series = "Book series";
-            Console.WriteLine("If it is a part of a book series, enter it's name:");
+            Console.WriteLine();
             do
             {
-                var input = Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
+                Console.WriteLine("Is it a part of a book series (Y/N)?");
+                var answer = Console.ReadLine().ToLower();
+                if (string.IsNullOrEmpty(answer))
                 {
                     BadDataMessage();
+                    Console.WriteLine("'y' or 'n'.");
                 }
-                else if (input.Length >= 100)
+                else if (answer != "y" && answer != "n")
                 {
-                    Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                    Console.WriteLine("Enter 'y' or 'n'.");
                 }
-                else
+                else if (answer == "y")
                 {
-                    series = input;
+                    while (true)
+                    {
+                        Console.WriteLine("Enter series title:");
+                        var input = Console.ReadLine();
+                        if (string.IsNullOrEmpty(input))
+                        {
+                            BadDataMessage();
+                        }
+                        else if (input.Length >= 100)
+                        {
+                            Console.WriteLine($"Your input {input} is to long. Please keep it up to 100 characters.");
+                        }
+                        else
+                        {
+                            series = input;
+                            isValid = true;
+                            break;
+                        }
+                    }
+                }
+                else if (answer == "n")
+                {
+                    series = null;
                     isValid = true;
                 }
             } while (isValid == false);
