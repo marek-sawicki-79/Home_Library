@@ -179,14 +179,24 @@ namespace HomeLibrary.GUI.CnsoleInput
             Console.WriteLine($"The book title is {book.Title}\nwritten by {book.Author}\n it is a {book.Genre}" +
                               $"\n published by {book.PublishingHouse}" +
                               $"\n edition no. {book.Edition}." +
-                              $"\nIt was published in {book.YearOfPublish} in {book.PublicationLanguage} language, and consists of {book.NumberOfPages} pages"+
+                              $"\nIt was published in {book.YearOfPublish} in {book.PublicationLanguage} language, and consists of {book.NumberOfPages} pages" +
                               $"\nIt's ISBN number is: {book.IsbnNumber};" +
-                              $"\nIt was added to your collection on {book.CollectionAddDate}." +
-                              $"\nIt is a part  of a {book.SeriesTitle} series." +
-                              $"\n your rate is {book.YourRating} out of 5." +
+                              $"\nIt was added to your collection on {book.CollectionAddDate}.");
+            if (book.SeriesTitle == null)
+            {
+                Console.WriteLine($"Your rate is { book.YourRating } out of 5." +
                               $"\nHere is a short summary of this book: \n\t{book.BookSummary}" +
                               $"\n\nthe book is located in {book.Location.Building} " +
                               $"\non {book.Location.Floor} in {book.Location.Room} room.");
+            }
+            else
+            {
+                Console.WriteLine($"\nIt is a part  of a {book.SeriesTitle} series." +
+                              $"\nYour rate is {book.YourRating} out of 5." +
+                              $"\nHere is a short summary of this book: \n\t{book.BookSummary}" +
+                              $"\n\nthe book is located in {book.Location.Building} " +
+                              $"\non {book.Location.Floor} in {book.Location.Room} room.");
+            }
             ShowStatus(book.BookStatus);
             Console.WriteLine();
         }
