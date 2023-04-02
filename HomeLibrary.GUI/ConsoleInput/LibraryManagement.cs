@@ -204,7 +204,7 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
             CheckJsonPresence();
             var books = libraryContent.Where(x => x.Title.ToLower().Contains(title.ToLower()));
-            foreach (var book in books)
+            foreach (var book in libraryContent)
             {
                 ShowBookDetails(book);
             }
