@@ -9,7 +9,7 @@ namespace HomeLibrary.BusinessLogic.Models
 {
     public class Book
     {
-        private static int Id { get; set; }
+        internal static int Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string PublishingHouse { get; set; }
@@ -27,6 +27,15 @@ namespace HomeLibrary.BusinessLogic.Models
 
         public Location Location { get; set; }
         public BookStatus BookStatus { get; set; }
+
+        public int GetId()
+        {
+            return Id;
+        }
+        public void SetId(int id)
+        {
+            Id = id;
+        }
 
         public Book(int id, string title, string author, string publishingHouse, string genre,
             string edition, string seriesTitle, int yearOfPublish, int yourRating,
