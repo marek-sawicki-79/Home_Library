@@ -166,6 +166,11 @@ namespace HomeLibrary.GUI.CnsoleInput
         {
             return Books;
         }
+        public int GetMaxId()
+        {
+            CheckJsonPresence();
+            return libraryContent.Max(b => b.GetId());
+        }
         public void AddBook(Book newBook)
         {
             CheckJsonPresence();
