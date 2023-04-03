@@ -90,8 +90,8 @@ while (true)
 
             Location location = library.AddLocation();
 
-            var maxId = myBooks.GetId().Max(b => b.Id);
-            //id = myBooks.Count + 1;
+            var maxId = library.GetMaxId();
+            id = maxId + 1;
 
             var newBook = new Book(id, title, author, publishingHouse, genre, edition, seriesTitle, yearOfPublish,
                 yourRating, location, bookStatus, isbnNumber, bookSummary, collectionAddDate, numberOfPages,
