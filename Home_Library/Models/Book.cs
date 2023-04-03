@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace HomeLibrary.BusinessLogic.Models
 {
     public class Book
     {
-        internal static int Id { get; set; }
+        [JsonProperty("id")]
+        internal int Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string PublishingHouse { get; set; }

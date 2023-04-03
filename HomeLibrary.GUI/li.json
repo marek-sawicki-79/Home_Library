@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": 4,
     "Title": "Pamiętnik znaleziony w wannie",
     "Author": "Stanisław Lem",
     "PublishingHouse": "Wydawnictwo Literackie",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "id": 1,
+    "id": 4,
     "Title": "Eden",
     "Author": "Stanisław Lem",
     "PublishingHouse": "Wydawnictwo Literackie Kraków-Wrocław",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "id": 2,
+    "id": 4,
     "Title": "Bogowie, Honor i Ankh-Morpork",
     "Author": "Terry Pratchett",
     "PublishingHouse": "Prószyński i S-ka",
@@ -81,7 +81,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 4,
     "Title": "Powrót z gwiazd",
     "Author": "Stanisław Lem",
     "PublishingHouse": "Wydawnictwo Literackie",
@@ -132,33 +132,6 @@
       "IsItYours": false,
       "LendedToInfo": null,
       "BorrowedFromInfo": "próba "
-    }
-  },
-  {
-    "id": 5,
-    "Title": "Czysty kod. Podręcznik programisty",
-    "Author": "Robert C. Martin",
-    "PublishingHouse": "Helion",
-    "Genre": "IT, Education",
-    "Edition": "I",
-    "SeriesTitle": null,
-    "YearOfPublish": 2014,
-    "YourRating": 5,
-    "IsbnNumber": "ISBN 978-83-283-0234-1",
-    "BookSummary": "How to write clean code",
-    "CollectionAddDate": "2023-04-03T22:11:21.5748273+02:00",
-    "NumberOfPages": 424,
-    "PublicationLanguage": "polish",
-    "Location": {
-      "Building": "Home",
-      "Floor": "Main floor",
-      "Room": "Study"
-    },
-    "BookStatus": {
-      "IsLended": false,
-      "IsItYours": true,
-      "LendedToInfo": null,
-      "BorrowedFromInfo": null
     }
   }
 ]

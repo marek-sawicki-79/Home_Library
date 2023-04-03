@@ -27,7 +27,7 @@
     }
   },
   {
-    "id": 1,
+    "id": 0,
     "Title": "Eden",
     "Author": "Stanisław Lem",
     "PublishingHouse": "Wydawnictwo Literackie Kraków-Wrocław",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "id": 2,
+    "id": 0,
     "Title": "Bogowie, Honor i Ankh-Morpork",
     "Author": "Terry Pratchett",
     "PublishingHouse": "Prószyński i S-ka",
@@ -81,7 +81,7 @@
     }
   },
   {
-    "id": 3,
+    "id": 0,
     "Title": "Powrót z gwiazd",
     "Author": "Stanisław Lem",
     "PublishingHouse": "Wydawnictwo Literackie",
@@ -108,7 +108,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 0,
     "Title": "Królestwo",
     "Author": "Jo Nesbo",
     "PublishingHouse": "Wydawnictwo Dolnośląskie",
@@ -135,24 +135,159 @@
     }
   },
   {
-    "id": 5,
-    "Title": "Czysty kod. Podręcznik programisty",
+    "id": 0,
+    "Title": "Rusz głową! Nauka programowania",
+    "Author": "Eric Freeman",
+    "PublishingHouse": "Helion S.A.",
+    "Genre": "It, Education",
+    "Edition": "I",
+    "SeriesTitle": "Rusz głową!",
+    "YearOfPublish": 2019,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-83-283-4697-0",
+    "BookSummary": "Programming for beginners. Basic coding course using python.",
+    "CollectionAddDate": "2022-02-11T00:00:00",
+    "NumberOfPages": 616,
+    "PublicationLanguage": "polish",
+    "Location": {
+      "Building": "House",
+      "Floor": "main floor",
+      "Room": "study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "id": 0,
+    "Title": "Czysty kod. Podręcznik dobrego programisty",
     "Author": "Robert C. Martin",
     "PublishingHouse": "Helion",
     "Genre": "IT, Education",
     "Edition": "I",
-    "SeriesTitle": null,
+    "SeriesTitle": "None",
     "YearOfPublish": 2014,
     "YourRating": 5,
     "IsbnNumber": "ISBN 978-83-283-0234-1",
-    "BookSummary": "How to write clean code",
-    "CollectionAddDate": "2023-04-03T22:11:21.5748273+02:00",
+    "BookSummary": "How to write a good code & how torefactor a bad one into good.",
+    "CollectionAddDate": "2022-03-15T00:00:00",
     "NumberOfPages": 424,
     "PublicationLanguage": "polish",
     "Location": {
-      "Building": "Home",
+      "Building": "House",
       "Floor": "Main floor",
       "Room": "Study"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "id": 0,
+    "Title": "dummy with no series",
+    "Author": "ads",
+    "PublishingHouse": "efrwq",
+    "Genre": "sfd",
+    "Edition": "X",
+    "SeriesTitle": null,
+    "YearOfPublish": 2002,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-789-789-789-7",
+    "BookSummary": "dfjhj hsfghsdf",
+    "CollectionAddDate": "2023-04-02T21:01:55.441879+02:00",
+    "NumberOfPages": 23,
+    "PublicationLanguage": "pl",
+    "Location": {
+      "Building": "h",
+      "Floor": "sadsf",
+      "Room": "yht"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "id": 0,
+    "Title": "dummy with series",
+    "Author": "werf",
+    "PublishingHouse": "wetr",
+    "Genre": "awg",
+    "Edition": "V",
+    "SeriesTitle": "sedfrghdfghj",
+    "YearOfPublish": 2002,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-456-456-456-4",
+    "BookSummary": "sfgbsfdghs",
+    "CollectionAddDate": "2023-04-02T21:09:32.0647735+02:00",
+    "NumberOfPages": 321,
+    "PublicationLanguage": "dfgh",
+    "Location": {
+      "Building": "asdfg",
+      "Floor": "asdrgr",
+      "Room": "adsfgdf"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "id": 0,
+    "Title": "blada lata po zolnierzu",
+    "Author": "trojka bez sternika",
+    "PublishingHouse": "kabareton",
+    "Genre": "comedy",
+    "Edition": "I",
+    "SeriesTitle": null,
+    "YearOfPublish": 1991,
+    "YourRating": 5,
+    "IsbnNumber": "ISBN 978-123-456-789-0",
+    "BookSummary": "dfghjdf",
+    "CollectionAddDate": "2023-04-03T21:55:20.7641194+02:00",
+    "NumberOfPages": 31,
+    "PublicationLanguage": "pl",
+    "Location": {
+      "Building": "wht",
+      "Floor": "bx",
+      "Room": "t"
+    },
+    "BookStatus": {
+      "IsLended": false,
+      "IsItYours": true,
+      "LendedToInfo": null,
+      "BorrowedFromInfo": null
+    }
+  },
+  {
+    "id": 0,
+    "Title": "qwertg",
+    "Author": "sgdf",
+    "PublishingHouse": "qwert",
+    "Genre": "thry",
+    "Edition": "C",
+    "SeriesTitle": null,
+    "YearOfPublish": 1900,
+    "YourRating": 1,
+    "IsbnNumber": "ISBN 978-123456789---0",
+    "BookSummary": "srth",
+    "CollectionAddDate": "2023-04-03T22:03:35.4160791+02:00",
+    "NumberOfPages": 54,
+    "PublicationLanguage": "rwth",
+    "Location": {
+      "Building": "reg",
+      "Floor": "gfew",
+      "Room": "jyu"
     },
     "BookStatus": {
       "IsLended": false,
